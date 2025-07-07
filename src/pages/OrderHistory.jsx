@@ -208,7 +208,20 @@ function OrderHistory() {
             </div>
             <div className="px-6 py-4 text-blue-800 font-semibold text-lg border-b border-gray-200">
               Total Amount: ₹{order.totalAmount.toFixed(2)}
+              <div className="text-gray-700 font-semibold text-sm md:text-base">
+                Name: <span className="font-normal">{order.customerName}</span>
+              </div>
+              <div className="text-gray-700 font-semibold text-sm md:text-base">
+                Email: <span className="font-normal">{order.customerEmail}</span>
+              </div>
+              <div className="text-gray-700 font-semibold text-sm md:text-base">
+                Phone: <span className="font-normal">{order.customerPhone}</span>
+              </div>
+              <div className="text-gray-700 font-semibold text-sm md:text-base">
+                Address: <span className="font-normal">{order.customerAddress}</span>
+              </div>
             </div>
+             
             <div className="px-6 py-4">
               <strong className="block mb-3 text-blue-800 text-lg">Items:</strong>
               <ul className="space-y-4">

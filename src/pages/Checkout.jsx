@@ -98,19 +98,20 @@ function Checkout() {
 
     login(updatedUser); // update user context
 
-    toast.success("🎉 Order placed successfully!", {
-    duration: 3000,
-  });
+   
 
-  // Wait 3 seconds for toast to disappear
-  setTimeout(() => {
-    clearCart();    // Clear cart after toast shows
-    navigate("/myorders"); // Then navigate
-  }, 3000);
+// Wait 3s, then clear cart and navigate safely
+setTimeout(() => {
+  clearCart();           // update context
+}, 3100); 
   } catch (error) {
     console.error("ORDER ERROR:", error.response?.data || error.message);
     toast.error("Failed to place order. Please try again.");
   }
+  navigate("/")
+   toast.success("🎉 Order placed successfully!", {
+  duration: 3000,
+});
 };
 
 

@@ -16,7 +16,8 @@ export const CartProvider=({children})=>{
           if (!user || !user.id) return; 
           try{
           const updatedUser = { ...user, cart: newCart }; 
-          await axios.patch(`http://localhost:5000/users/${user.id}`,{cart:newCart});   
+          await axios.patch(`http://localhost:3000/users/${user.id}`,{cart:newCart});   
+          login({ ...user, cart: newCart })
            
          }
          catch(er){

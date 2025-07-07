@@ -63,7 +63,7 @@ function ProductCard({ product }) {
       <h3 className="text-lg text-gray-800 font-semibold mt-2">{product.name}</h3>
       <p className="text-pink-600 font-bold mt-1">₹{product.price}</p>
       <p className="text-pink-600 font-bold mt-1">{product.category}</p>
-      <p className='font-bold mt-1"'>{displayStars(product.rating)}</p>
+      <div className='font-bold mt-1'>{displayStars(product.rating)}</div>
 
       <Button
         onClick={(e) => {

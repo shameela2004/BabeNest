@@ -62,15 +62,24 @@
 import React from 'react';
 import { useCart } from '../context/CartProvider';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/common/Navbar';
 
 function Cart() {
   const { cartItems, removeFromCart, updateQuantity, totalPrice } = useCart();
 
   if (cartItems.length === 0) {
-    return <p className="p-4 text-center">Your cart is empty.</p>;
+    return <>
+        <Navbar></Navbar>
+        <div className="max-w-4xl mx-auto p-6 text-center text-gray-600">
+          <h2 className="text-2xl font-semibold mb-4">Your Cart is empty 😔</h2>
+          <p>Add some products ...!!</p>
+        </div>
+        </>
   }
 
   return (
+    <>
+    <Navbar></Navbar>
     <div className="max-w-4xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
       <div className="space-y-4">
@@ -131,21 +140,10 @@ function Cart() {
         </Link>
       </button>
     </div>
+    </>
   );
 }
 
 export default Cart;
 
-// import React from 'react'
-// import Navbar from '../components/common/Navbar'
 
-// function CartPage() {
-//   return (
-//     <>
-//     <Navbar/>
-//     <h2>Cart</h2>
-//     </>
-//   )
-// }
-
-// export default CartPage

@@ -36,7 +36,7 @@ function Wishlist() {
     <div
       key={product.id}
       className="border rounded-lg shadow p-4 bg-white flex flex-col cursor-pointer"
-      onClick={() => navigate(`/products/${product.id}`)}  // <-- here
+      onClick={() => navigate(`/products/${product.id}`)}  
     >
       <img
         src={product.image}
@@ -53,11 +53,12 @@ function Wishlist() {
         onClick={(e) => e.stopPropagation()} // stop click bubbling for buttons
       >
         <Button
-          onClick={() => {
-            addToCart(product)
-            removeFromWishlist(product.id)
-          }}
-          text="Add to Cart"
+        onClick={(e) => {
+          e.preventDefault()
+          e.stopPropagation()
+          addToCart(product)
+        }}
+        text="Add to Cart"
           className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white rounded py-2"
         />
         <Button
