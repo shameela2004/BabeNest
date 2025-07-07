@@ -1,0 +1,383 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Newborn Onesie",
+      "price": 299,
+      "image": "/images/babyprod.jpeg",
+      "category": "Clothing",
+      "description": "Cozy Clothing for your little one",
+      "stock": "100",
+      "rating": "4.5"
+    },
+    {
+      "id": "2",
+      "name": "Baby Bottle",
+      "price": 199,
+      "image": "/images/babyprod.jpeg",
+      "category": "Feeding",
+      "description": "Soft bottles for your little one",
+      "stock": "200",
+      "rating": "4.5"
+    },
+    {
+      "id": "3",
+      "name": "Baby Toy",
+      "price": 599,
+      "image": "/images/babyprod.jpeg",
+      "category": "Toy",
+      "description": "Small soft and fluffy Toy for your newborn ",
+      "stock": "400",
+      "rating": "4.5"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "abc",
+      "email": "abc@gmail.com",
+      "password": "12345",
+      "cart": [],
+      "wishlist": [
+        {
+          "id": "3",
+          "name": "Baby Toy",
+          "price": 599,
+          "image": "/images/babyprod.jpeg",
+          "category": "Toy",
+          "description": "Small soft and fluffy Toy for your newborn ",
+          "stock": "400",
+          "rating": "4.5"
+        },
+        {
+          "id": "2",
+          "name": "Baby Bottle",
+          "price": 199,
+          "image": "/images/babyprod.jpeg",
+          "category": "Feeding",
+          "description": "Soft bottles for your little one",
+          "stock": "200",
+          "rating": "4.5"
+        }
+      ],
+      "orders": [
+        {
+          "customerName": "jey",
+          "customerEmail": "jeny@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "items": [
+            {
+              "id": "3",
+              "name": "Baby Toy",
+              "price": 599,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Toy",
+              "quantity": 6
+            }
+          ],
+          "totalAmount": 3594,
+          "orderDate": "2025-07-05T06:49:55.770Z"
+        },
+        {
+          "customerName": "1234",
+          "customerEmail": "fathimashameela2024@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "eeeeeeeeevvvvvvvvvvvvv",
+          "items": [
+            {
+              "id": "3",
+              "name": "Baby Toy",
+              "price": 599,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Toy",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 599,
+          "orderDate": "2025-07-05T06:52:18.377Z"
+        },
+        {
+          "customerName": "aa3",
+          "customerEmail": "asd@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "wwwwwwwwwwwwwwwwg",
+          "items": [
+            {
+              "id": "1",
+              "name": "Newborn Onesie",
+              "price": 299,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Clothing",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 299,
+          "orderDate": "2025-07-05T06:53:41.436Z"
+        },
+        {
+          "customerName": "jeny",
+          "customerEmail": "asd@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "sseeffffffffffffffffffffffffffffff",
+          "items": [
+            {
+              "id": "1",
+              "name": "Newborn Onesie",
+              "price": 299,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Clothing",
+              "quantity": 1
+            },
+            {
+              "id": "3",
+              "name": "Baby Toy",
+              "price": 599,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Toy",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 898,
+          "orderDate": "2025-07-05T06:55:44.037Z"
+        },
+        {
+          "orderId": "ORD-1751698827733-9825",
+          "customerName": "aaaaaaaaaaaaaaaaaaaaaa",
+          "customerEmail": "fathimashameela2004@gmail.com",
+          "customerPhone": "546788790666",
+          "customerAddress": "eeeeeeeevvvvvvvvvvvv0000000000000",
+          "items": [
+            {
+              "id": "2",
+              "name": "Baby Bottle",
+              "price": 199,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Feeding",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 199,
+          "orderDate": "2025-07-05T07:00:27.733Z"
+        },
+        {
+          "orderId": "ORD-1751699149403-4554",
+          "customerName": "ertt",
+          "customerEmail": "jey@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "yygygytyttytdrxduyuihhuiuhuiuih",
+          "items": [
+            {
+              "id": "2",
+              "name": "Baby Bottle",
+              "price": 199,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Feeding",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 199,
+          "orderDate": "2025-07-05T07:05:49.403Z"
+        },
+        {
+          "orderId": "ORD-1751699274704-7148",
+          "customerName": "jeny",
+          "customerEmail": "fathimashameela2024@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "wwwwwwwwwwdddddddddddddddd",
+          "items": [
+            {
+              "id": "1",
+              "name": "Newborn Onesie",
+              "price": 299,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Clothing",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 299,
+          "orderDate": "2025-07-05T07:07:54.704Z"
+        },
+        {
+          "orderId": "ORD-1751699325532-6970",
+          "customerName": "aaaaa",
+          "customerEmail": "jeny@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "sssssssssssssssssssssssssssssssssssssssssssssssss",
+          "items": [
+            {
+              "id": "1",
+              "name": "Newborn Onesie",
+              "price": 299,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Clothing",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 299,
+          "orderDate": "2025-07-05T07:08:45.532Z"
+        },
+        {
+          "orderId": "ORD-1751703334825-6883",
+          "customerName": "aae",
+          "customerEmail": "fathimashameela2024@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "dddddddddddddddddddddddddddddddddd",
+          "items": [
+            {
+              "id": "2",
+              "name": "Baby Bottle",
+              "price": 199,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Feeding",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 199,
+          "orderDate": "2025-07-05T08:15:34.825Z"
+        },
+        {
+          "orderId": "ORD-1751703407858-7689",
+          "customerName": "jey",
+          "customerEmail": "fathimashameela2024@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "dddddddddddddddddddddddddddd",
+          "items": [
+            {
+              "id": "2",
+              "name": "Baby Bottle",
+              "price": 199,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Feeding",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 199,
+          "orderDate": "2025-07-05T08:16:47.858Z"
+        },
+        {
+          "orderId": "ORD-1751703547368-1701",
+          "customerName": "asd",
+          "customerEmail": "asd@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "222222222222222222222222222222222",
+          "items": [
+            {
+              "id": "3",
+              "name": "Baby Toy",
+              "price": 599,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Toy",
+              "quantity": 2
+            }
+          ],
+          "totalAmount": 1198,
+          "orderDate": "2025-07-05T08:19:07.368Z"
+        },
+        {
+          "orderId": "ORD-1751703639919-9903",
+          "customerName": "jeny",
+          "customerEmail": "fathimashameela2024@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "dkjkeenfejfwiklnulfhjmuhjjtjktrjk",
+          "items": [
+            {
+              "id": "2",
+              "name": "Baby Bottle",
+              "price": 199,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Feeding",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 199,
+          "orderDate": "2025-07-05T08:20:39.919Z"
+        },
+        {
+          "orderId": "ORD-1751704824462-7296",
+          "customerName": "you",
+          "customerEmail": "a@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "sssssssssssssssssssssssssssssssssssssssssssssssssss",
+          "items": [
+            {
+              "id": "2",
+              "name": "Baby Bottle",
+              "price": 199,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Feeding",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 199,
+          "orderDate": "2025-07-05T08:40:24.462Z"
+        },
+        {
+          "orderId": "ORD-1751705162851-8248",
+          "customerName": "jeny",
+          "customerEmail": "jeny@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "sssssssssssssssssssssssssssssssssssssssssssss",
+          "items": [
+            {
+              "id": "1",
+              "name": "Newborn Onesie",
+              "price": 299,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Clothing",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 299,
+          "orderDate": "2025-07-05T08:46:02.851Z"
+        },
+        {
+          "orderId": "ORD-1751705364924-3382",
+          "customerName": "you",
+          "customerEmail": "fathimashameela2024@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "sdwhdwgehgnyuvet 76589303",
+          "items": [
+            {
+              "id": "1",
+              "name": "Newborn Onesie",
+              "price": 299,
+              "image": "src/assets/babyprod.jpeg",
+              "category": "Clothing",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 299,
+          "orderDate": "2025-07-05T08:49:24.924Z"
+        }
+      ]
+    },
+    {
+      "id": "12f3",
+      "name": "h",
+      "email": "h@gmail.com2",
+      "password": "23",
+      "cart": [],
+      "wishlist": [],
+      "orders": []
+    },
+    {
+      "id": "b24a",
+      "name": "",
+      "email": "",
+      "password": "",
+      "cart": [],
+      "wishlist": [],
+      "orders": []
+    },
+    {
+      "id": "84f8",
+      "name": "a",
+      "email": "a@gmail.com",
+      "password": "123",
+      "cart": [],
+      "wishlist": [],
+      "orders": []
+    }
+  ]
+}
