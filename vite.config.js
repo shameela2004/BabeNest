@@ -4,10 +4,14 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-   plugins: [
-    tailwindcss(),
+  plugins: [
+    react(),
+    tailwindcss(),  
   ],
+  server: {
+    watch: {
+      // Prevent reload when db.json is modified by JSON Server
+      ignored: ['**/db.json'],
+    },
+  },
 })
-
-

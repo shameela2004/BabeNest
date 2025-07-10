@@ -13,6 +13,13 @@ import Checkout from './pages/Checkout'
 import OrderHistory from './pages/OrderHistory'
 import ProductDetails from './components/ProductDetails'
 import Wishlist from './pages/Wishlist'
+import AdminDashboard from './pages/admin/AdminDashboard'
+import AdminLayout from './pages/admin/AdminLayout'
+import ManageProducts from './pages/admin/ManageProducts'
+import AddProduct from './pages/admin/AddProduct'
+import EditProduct from './pages/admin/EditProduct'
+import AdminRoute from './components/common/AdminRoute'
+import ManageOrders from './pages/admin/ManageOrders'
 
 function App() {
   return (
@@ -24,15 +31,23 @@ function App() {
 
         <Route path='/cart' element={<ProtectedRoute><CartPage/></ProtectedRoute>}></Route>
         <Route path='/login' element={<Login/>}></Route>
+
         <Route path='/register' element={<Register/>}></Route>
-        {/* <Route path='/cart' element={<CartPage/>}></Route> */}
-        {/* <Route path='/login' element={<Login/>}></Route>
-        <Route path='/register' element={<Register/>}></Route> */}
+
         <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
         <Route path="/myorders" element={<OrderHistory />} />
         <Route path="/products/:id" element={<ProductDetails/>}/>
+
         <Route path="/wishlist" element={<Wishlist/>}/>
-        {/* <Route path="/orderproduct" element={<BuyNow/>}/> */}
+
+        <Route path="/admin" element={<AdminRoute><AdminLayout/></AdminRoute>}>
+        <Route index element={<AdminDashboard/>}/>
+        <Route path="/admin/products" element={<ManageProducts/>}/>
+        <Route path="/admin/products/add" element={<AddProduct/>}/>
+        <Route path="/admin/products/edit/:id" element={<EditProduct/>}/>
+        <Route path="/admin/orders" element={<ManageOrders/>}/>
+
+        </Route>
 
       </Routes>
      

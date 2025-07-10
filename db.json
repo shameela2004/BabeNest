@@ -4,11 +4,11 @@
       "id": "2",
       "name": "Newborn Romper - Animal Print",
       "category": "Clothing",
-      "price": 499,
+      "price": "399",
       "rating": " 3",
       "image": "/images/romberanimalprint.jpg",
-      "description": "Cute animal printed romper for daily comfort.",
-      "stock": "15"
+      "description": "Cute animal printed romper for daily comfort..",
+      "stock": "20"
     },
     {
       "id": "3",
@@ -131,16 +131,6 @@
       "stock": "8"
     },
     {
-      "id": "15",
-      "name": "Newborn Onesie",
-      "price": 299,
-      "image": "/images/romberanimalprint.jpg",
-      "category": "Clothing",
-      "description": "Cozy Clothing for your little one",
-      "stock": "100",
-      "rating": "4.5"
-    },
-    {
       "id": "16",
       "name": "Baby Bottle",
       "price": 199,
@@ -159,235 +149,36 @@
       "description": "Small soft and fluffy Toy for your newborn ",
       "stock": "400",
       "rating": "4.5"
+    },
+    {
+      "id": "f356",
+      "name": "Newborn Onesie",
+      "price": "245",
+      "image": "blob:http://localhost:5173/c11c2eff-7407-43fe-a39d-f10b2b2135e4",
+      "category": "Clothing",
+      "description": "Cozy Clothing for your little one",
+      "stock": "9",
+      "rating": "3"
     }
   ],
   "users": [
     {
       "id": "1",
-      "name": "abc",
-      "email": "abc@gmail.com",
-      "password": "12345",
-      "cart": [
+      "email": "admin@babenest.com",
+      "password": "admin@123",
+      "role": "admin",
+      "cart": [],
+      "orders": [],
+      "wishlist": [
         {
           "id": "2",
           "name": "Newborn Romper - Animal Print",
           "category": "Clothing",
           "price": 499,
-          "rating": " 4.2",
-          "image": "/images/clothing/romper-animal.jpg",
+          "rating": " 3",
+          "image": "/images/romberanimalprint.jpg",
           "description": "Cute animal printed romper for daily comfort.",
-          "stock": "15",
-          "quantity": 1
-        },
-        {
-          "id": "3",
-          "name": "Diaper Rash Cream - 50g",
-          "category": "Baby Care",
-          "price": 199,
-          "rating": "4.7",
-          "image": "/images/care/rash-cream.jpg",
-          "description": "Protects and heals baby skin from rashes.",
-          "stock": "30",
-          "quantity": 6
-        }
-      ],
-      "wishlist": [],
-      "orders": [
-        {
-          "orderId": "ORD-1751699325532-6970",
-          "customerName": "aaaaa",
-          "customerEmail": "jeny@gmail.com",
-          "customerPhone": "1234567890",
-          "customerAddress": "sssssssssssssssssssssssssssssssssssssssssssssssss",
-          "items": [
-            {
-              "id": "1",
-              "name": "Newborn Onesie",
-              "price": 299,
-              "image": "src/assets/babyprod.jpeg",
-              "category": "Clothing",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 299,
-          "orderDate": "2025-07-05T07:08:45.532Z"
-        },
-        {
-          "orderId": "ORD-1751703334825-6883",
-          "customerName": "aae",
-          "customerEmail": "fathimashameela2024@gmail.com",
-          "customerPhone": "1234567890",
-          "customerAddress": "dddddddddddddddddddddddddddddddddd",
-          "items": [
-            {
-              "id": "2",
-              "name": "Baby Bottle",
-              "price": 199,
-              "image": "src/assets/babyprod.jpeg",
-              "category": "Feeding",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 199,
-          "orderDate": "2025-07-05T08:15:34.825Z"
-        },
-        {
-          "orderId": "ORD-1751703407858-7689",
-          "customerName": "jey",
-          "customerEmail": "fathimashameela2024@gmail.com",
-          "customerPhone": "1234567890",
-          "customerAddress": "dddddddddddddddddddddddddddd",
-          "items": [
-            {
-              "id": "2",
-              "name": "Baby Bottle",
-              "price": 199,
-              "image": "src/assets/babyprod.jpeg",
-              "category": "Feeding",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 199,
-          "orderDate": "2025-07-05T08:16:47.858Z"
-        },
-        {
-          "orderId": "ORD-1751703547368-1701",
-          "customerName": "asd",
-          "customerEmail": "asd@gmail.com",
-          "customerPhone": "1234567890",
-          "customerAddress": "222222222222222222222222222222222",
-          "items": [
-            {
-              "id": "3",
-              "name": "Baby Toy",
-              "price": 599,
-              "image": "src/assets/babyprod.jpeg",
-              "category": "Toy",
-              "quantity": 2
-            }
-          ],
-          "totalAmount": 1198,
-          "orderDate": "2025-07-05T08:19:07.368Z"
-        },
-        {
-          "orderId": "ORD-1751703639919-9903",
-          "customerName": "jeny",
-          "customerEmail": "fathimashameela2024@gmail.com",
-          "customerPhone": "1234567890",
-          "customerAddress": "dkjkeenfejfwiklnulfhjmuhjjtjktrjk",
-          "items": [
-            {
-              "id": "2",
-              "name": "Baby Bottle",
-              "price": 199,
-              "image": "src/assets/babyprod.jpeg",
-              "category": "Feeding",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 199,
-          "orderDate": "2025-07-05T08:20:39.919Z"
-        },
-        {
-          "orderId": "ORD-1751704824462-7296",
-          "customerName": "you",
-          "customerEmail": "a@gmail.com",
-          "customerPhone": "1234567890",
-          "customerAddress": "sssssssssssssssssssssssssssssssssssssssssssssssssss",
-          "items": [
-            {
-              "id": "2",
-              "name": "Baby Bottle",
-              "price": 199,
-              "image": "src/assets/babyprod.jpeg",
-              "category": "Feeding",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 199,
-          "orderDate": "2025-07-05T08:40:24.462Z"
-        },
-        {
-          "orderId": "ORD-1751705162851-8248",
-          "customerName": "jeny",
-          "customerEmail": "jeny@gmail.com",
-          "customerPhone": "1234567890",
-          "customerAddress": "sssssssssssssssssssssssssssssssssssssssssssss",
-          "items": [
-            {
-              "id": "1",
-              "name": "Newborn Onesie",
-              "price": 299,
-              "image": "src/assets/babyprod.jpeg",
-              "category": "Clothing",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 299,
-          "orderDate": "2025-07-05T08:46:02.851Z"
-        },
-        {
-          "orderId": "ORD-1751705364924-3382",
-          "customerName": "you",
-          "customerEmail": "fathimashameela2024@gmail.com",
-          "customerPhone": "1234567890",
-          "customerAddress": "sdwhdwgehgnyuvet 76589303",
-          "items": [
-            {
-              "id": "1",
-              "name": "Newborn Onesie",
-              "price": 299,
-              "image": "src/assets/babyprod.jpeg",
-              "category": "Clothing",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 299,
-          "orderDate": "2025-07-05T08:49:24.924Z"
-        },
-        {
-          "orderId": "ORD-1751866574418-2262",
-          "customerName": "shameela",
-          "customerEmail": "fathimashameela2004@gmail.com",
-          "customerPhone": "23233466878",
-          "customerAddress": "sssssssssssssssssssssssssssssssssssssssss",
-          "items": [
-            {
-              "id": "1",
-              "name": "Newborn Onesie",
-              "price": 299,
-              "image": "/images/babyprod.jpeg",
-              "category": "Clothing",
-              "description": "Cozy Clothing for your little one",
-              "stock": "100",
-              "rating": "4.5",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 299,
-          "orderDate": "2025-07-07T05:36:14.418Z"
-        },
-        {
-          "orderId": "ORD-1751868694141-373",
-          "customerName": "shameela",
-          "customerEmail": "fathimashameela2004@gmail.com",
-          "customerPhone": "23233466878",
-          "customerAddress": "valiyora chinakkal vega",
-          "items": [
-            {
-              "id": "1",
-              "name": "Newborn Onesie",
-              "price": 299,
-              "image": "/images/babyprod.jpeg",
-              "category": "Clothing",
-              "description": "Cozy Clothing for your little one",
-              "stock": "100",
-              "rating": "4.5",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 299,
-          "orderDate": "2025-07-07T06:11:34.141Z"
+          "stock": "15"
         }
       ]
     },
@@ -523,7 +314,8 @@
             }
           ],
           "totalAmount": 698,
-          "orderDate": "2025-07-07T09:07:47.412Z"
+          "orderDate": "2025-07-07T09:07:47.412Z",
+          "status": "shipped"
         },
         {
           "orderId": "ORD-1751947242373-8298",
@@ -556,7 +348,8 @@
             }
           ],
           "totalAmount": 1845,
-          "orderDate": "2025-07-08T04:00:42.373Z"
+          "orderDate": "2025-07-08T04:00:42.373Z",
+          "status": "pending"
         },
         {
           "orderId": "ORD-1751950262401-6035",
@@ -578,7 +371,8 @@
             }
           ],
           "totalAmount": 798,
-          "orderDate": "2025-07-08T04:51:02.401Z"
+          "orderDate": "2025-07-08T04:51:02.401Z",
+          "status": "pending"
         }
       ]
     },
@@ -666,7 +460,8 @@
             }
           ],
           "totalAmount": 797,
-          "orderDate": "2025-07-08T09:11:33.452Z"
+          "orderDate": "2025-07-08T09:11:33.452Z",
+          "status": "pending"
         },
         {
           "orderId": "ORD-1751969303193-9047",
@@ -688,7 +483,8 @@
             }
           ],
           "totalAmount": 599,
-          "orderDate": "2025-07-08T10:08:23.193Z"
+          "orderDate": "2025-07-08T10:08:23.193Z",
+          "status": "pending"
         }
       ],
       "wishlist": [

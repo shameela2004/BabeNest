@@ -130,7 +130,7 @@ function Cart() {
         Total: ₹{totalPrice.toFixed(2)}
       </div>
 
-      <button
+      {/* <button
         type="button"
         className="mt-4 bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded"
         
@@ -138,7 +138,12 @@ function Cart() {
         <Link to="/checkout" >
        Proceed to Checkout
         </Link>
-      </button>
+      </button> */}      <Link
+  to="/checkout"
+  className="inline-block mt-4 bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded text-center"
+>
+  Proceed to Checkout
+</Link>
     </div>
     </>
   );

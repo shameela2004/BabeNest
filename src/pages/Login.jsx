@@ -15,8 +15,14 @@ function Login() {
             const res = await axios.get(`http://localhost:3000/users?email=${form.email}&password=${form.password}`)
             if(res.data.length>0){
                 login(res.data[0])
-                alert("Login Successfull")
-                navigate("/")
+                const user = res.data[0];
+                 if (user.role === 'admin') {
+                    alert("Login Successfull")
+                     navigate('/admin');
+                 } else {
+                    alert("Login Successfull")
+                    navigate('/');
+                }
             }
             else{
                 alert("Invalid password or email")
