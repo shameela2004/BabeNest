@@ -2,20 +2,22 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import { useAuth } from './AuthProvider';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const Cartcontext=createContext()
 export const useCart=()=>useContext(Cartcontext);
 export const CartProvider=({children})=>{
+  const navigate=useNavigate()
     const [cartItems,setCartItems]=useState([])
-    const {user,login}=useAuth()
+    const {user,login,loading}=useAuth()
       useEffect(() => {
-    if (user && user.cart) {
+    if (!loading && user && user.cart) {
       setCartItems(user.cart);
     }
-  }, [user]);
+  }, [user,loading]);
     const addToServer=async(newCart)=>{
           if (!user || !user.id) return; 
           try{
-          const updatedUser = { ...user, cart: newCart }; 
+          // const updatedUser = { ...user, cart: newCart }; 
           await axios.patch(`http://localhost:3000/users/${user.id}`,{cart:newCart});   
           login({ ...user, cart: newCart })
            
@@ -26,8 +28,16 @@ export const CartProvider=({children})=>{
     }
 
     const addToCart=(product)=>{
+      if (loading) return;
+      if(!user|| !user.id) {
+        navigate("/login")
+        toast.error('login first!');
+        return
+      }
         const UpdatedCart=(()=>{
+
             const existing=cartItems.find(item=>item.id===product.id)
+            toast.success('Increased quantity!');
              if(existing){
                 toast.success('Increased quantity!');
                 return cartItems.map(item=>

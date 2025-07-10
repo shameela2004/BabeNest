@@ -5,7 +5,7 @@
       "name": "Newborn Romper - Animal Print",
       "category": "Clothing",
       "price": 499,
-      "rating": " 4.2",
+      "rating": " 3",
       "image": "/images/romberanimalprint.jpg",
       "description": "Cute animal printed romper for daily comfort.",
       "stock": "15"
@@ -15,7 +15,7 @@
       "name": "Diaper Rash Cream - 50g",
       "category": "Baby Care",
       "price": 199,
-      "rating": "4.7",
+      "rating": "4.6",
       "image": "/images/rashcream.avif",
       "description": "Protects and heals baby skin from rashes.",
       "stock": "30"
@@ -193,63 +193,6 @@
       ],
       "wishlist": [],
       "orders": [
-        {
-          "orderId": "ORD-1751698827733-9825",
-          "customerName": "aaaaaaaaaaaaaaaaaaaaaa",
-          "customerEmail": "fathimashameela2004@gmail.com",
-          "customerPhone": "546788790666",
-          "customerAddress": "eeeeeeeevvvvvvvvvvvv0000000000000",
-          "items": [
-            {
-              "id": "2",
-              "name": "Baby Bottle",
-              "price": 199,
-              "image": "src/assets/babyprod.jpeg",
-              "category": "Feeding",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 199,
-          "orderDate": "2025-07-05T07:00:27.733Z"
-        },
-        {
-          "orderId": "ORD-1751699149403-4554",
-          "customerName": "ertt",
-          "customerEmail": "jey@gmail.com",
-          "customerPhone": "1234567890",
-          "customerAddress": "yygygytyttytdrxduyuihhuiuhuiuih",
-          "items": [
-            {
-              "id": "2",
-              "name": "Baby Bottle",
-              "price": 199,
-              "image": "src/assets/babyprod.jpeg",
-              "category": "Feeding",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 199,
-          "orderDate": "2025-07-05T07:05:49.403Z"
-        },
-        {
-          "orderId": "ORD-1751699274704-7148",
-          "customerName": "jeny",
-          "customerEmail": "fathimashameela2024@gmail.com",
-          "customerPhone": "1234567890",
-          "customerAddress": "wwwwwwwwwwdddddddddddddddd",
-          "items": [
-            {
-              "id": "1",
-              "name": "Newborn Onesie",
-              "price": 299,
-              "image": "src/assets/babyprod.jpeg",
-              "category": "Clothing",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 299,
-          "orderDate": "2025-07-05T07:07:54.704Z"
-        },
         {
           "orderId": "ORD-1751699325532-6970",
           "customerName": "aaaaa",
@@ -473,17 +416,6 @@
       "password": "123",
       "cart": [
         {
-          "id": "4",
-          "name": "Baby Shampoo - 200ml",
-          "category": "Baby Care",
-          "price": 249,
-          "rating": "4.3",
-          "image": "/images/babeshampoo.avif",
-          "description": "Tear-free formula made with gentle ingredients.",
-          "stock": "25",
-          "quantity": 1
-        },
-        {
           "id": "3",
           "name": "Diaper Rash Cream - 50g",
           "category": "Baby Care",
@@ -492,17 +424,28 @@
           "image": "/images/rashcream.avif",
           "description": "Protects and heals baby skin from rashes.",
           "stock": "30",
-          "quantity": 2
+          "quantity": 1
         },
         {
-          "id": "7",
-          "name": "Diaper Pack - Medium (24 pcs)",
-          "category": "Diapering",
-          "price": 549,
+          "id": "11",
+          "name": "Baby Mattress Set - Stars Design",
+          "category": "Bedding",
+          "price": 799,
+          "rating": "4.6",
+          "image": "/images/Baby Mattress Set.avif",
+          "description": "Comfortable mattress with mosquito net for newborns.",
+          "stock": "12",
+          "quantity": 1
+        },
+        {
+          "id": "17",
+          "name": "Baby Toy",
+          "price": 599,
+          "image": "/images/toys.avif",
+          "category": "Toys",
+          "description": "Small soft and fluffy Toy for your newborn ",
+          "stock": "400",
           "rating": "4.5",
-          "image": "/images/diaperset.jpg",
-          "description": "Super-absorbent leak-proof diapers for newborns.",
-          "stock": "50",
           "quantity": 1
         }
       ],
@@ -528,16 +471,6 @@
           "stock": "30"
         },
         {
-          "id": "2",
-          "name": "Newborn Romper - Animal Print",
-          "category": "Clothing",
-          "price": 499,
-          "rating": " 4.2",
-          "image": "/images/romberanimalprint.jpg",
-          "description": "Cute animal printed romper for daily comfort.",
-          "stock": "15"
-        },
-        {
           "id": "5",
           "name": "Feeding Bottle - 150ml",
           "category": "Feeding",
@@ -546,163 +479,19 @@
           "image": "/images/feedingbottle.jpg",
           "description": "Anti-colic BPA-free feeding bottle.",
           "stock": "40"
+        },
+        {
+          "id": "6",
+          "name": "Silicone Bib - Pink",
+          "category": "Feeding",
+          "price": 199,
+          "rating": "4.6",
+          "image": "/images/feeding3.jpg",
+          "description": "Waterproof bib with food catcher pocket.",
+          "stock": "35"
         }
       ],
       "orders": [
-        {
-          "orderId": "ORD-1751875320713-8216",
-          "customerName": "shameela",
-          "customerEmail": "fathimashameela2024@gmail.com",
-          "customerPhone": "23233466878",
-          "customerAddress": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-          "items": [
-            {
-              "id": "3",
-              "name": "Diaper Rash Cream - 50g",
-              "category": "Baby Care",
-              "price": 199,
-              "rating": "4.7",
-              "image": "/images/care/rash-cream.jpg",
-              "description": "Protects and heals baby skin from rashes.",
-              "stock": "30",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 199,
-          "orderDate": "2025-07-07T08:02:00.713Z"
-        },
-        {
-          "orderId": "ORD-1751875549564-8763",
-          "customerName": "shameela",
-          "customerEmail": "fathimashameela2004@gmail.com",
-          "customerPhone": "23233466878",
-          "customerAddress": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-          "items": [
-            {
-              "id": "3",
-              "name": "Diaper Rash Cream - 50g",
-              "category": "Baby Care",
-              "price": 199,
-              "rating": "4.7",
-              "image": "/images/care/rash-cream.jpg",
-              "description": "Protects and heals baby skin from rashes.",
-              "stock": "30",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 199,
-          "orderDate": "2025-07-07T08:05:49.564Z"
-        },
-        {
-          "orderId": "ORD-1751875683665-7062",
-          "customerName": "shameela",
-          "customerEmail": "fathimashameela2024@gmail.com",
-          "customerPhone": "23233466878",
-          "customerAddress": "sssssssssssssssssssssssssssssssss",
-          "items": [
-            {
-              "id": "3",
-              "name": "Diaper Rash Cream - 50g",
-              "category": "Baby Care",
-              "price": 199,
-              "rating": "4.7",
-              "image": "/images/care/rash-cream.jpg",
-              "description": "Protects and heals baby skin from rashes.",
-              "stock": "30",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 199,
-          "orderDate": "2025-07-07T08:08:03.665Z"
-        },
-        {
-          "orderId": "ORD-1751875728869-3763",
-          "customerName": "shameela",
-          "customerEmail": "fathimashameela2004@gmail.com",
-          "customerPhone": "23233466878",
-          "customerAddress": "gtthtyhyhhhhhhhhhhhhhhhhhhhhhhhhhhh",
-          "items": [
-            {
-              "id": "3",
-              "name": "Diaper Rash Cream - 50g",
-              "category": "Baby Care",
-              "price": 199,
-              "rating": "4.7",
-              "image": "/images/care/rash-cream.jpg",
-              "description": "Protects and heals baby skin from rashes.",
-              "stock": "30",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 199,
-          "orderDate": "2025-07-07T08:08:48.869Z"
-        },
-        {
-          "orderId": "ORD-1751875779662-4670",
-          "customerName": "shameela",
-          "customerEmail": "fathimashameela2004@gmail.com",
-          "customerPhone": "23233466878",
-          "customerAddress": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-          "items": [
-            {
-              "id": "3",
-              "name": "Diaper Rash Cream - 50g",
-              "category": "Baby Care",
-              "price": 199,
-              "rating": "4.7",
-              "image": "/images/care/rash-cream.jpg",
-              "description": "Protects and heals baby skin from rashes.",
-              "stock": "30",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 199,
-          "orderDate": "2025-07-07T08:09:39.663Z"
-        },
-        {
-          "orderId": "ORD-1751875851635-3751",
-          "customerName": "shameela",
-          "customerEmail": "fathimashameela2004@gmail.com",
-          "customerPhone": "23233466878",
-          "customerAddress": "ssssssssssssssssssssssssssssssssssssssssssssssss",
-          "items": [
-            {
-              "id": "3",
-              "name": "Diaper Rash Cream - 50g",
-              "category": "Baby Care",
-              "price": 199,
-              "rating": "4.7",
-              "image": "/images/care/rash-cream.jpg",
-              "description": "Protects and heals baby skin from rashes.",
-              "stock": "30",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 199,
-          "orderDate": "2025-07-07T08:10:51.635Z"
-        },
-        {
-          "orderId": "ORD-1751875929180-9656",
-          "customerName": "shameela",
-          "customerEmail": "fathimashameela2004@gmail.com",
-          "customerPhone": "23233466878",
-          "customerAddress": "aaaaaaaaaaaaaaaaaaaaassssssssssssssssss",
-          "items": [
-            {
-              "id": "3",
-              "name": "Diaper Rash Cream - 50g",
-              "category": "Baby Care",
-              "price": 199,
-              "rating": "4.7",
-              "image": "/images/care/rash-cream.jpg",
-              "description": "Protects and heals baby skin from rashes.",
-              "stock": "30",
-              "quantity": 1
-            }
-          ],
-          "totalAmount": 199,
-          "orderDate": "2025-07-07T08:12:09.180Z"
-        },
         {
           "orderId": "ORD-1751879267412-3915",
           "customerName": "shameela",
@@ -735,6 +524,61 @@
           ],
           "totalAmount": 698,
           "orderDate": "2025-07-07T09:07:47.412Z"
+        },
+        {
+          "orderId": "ORD-1751947242373-8298",
+          "customerName": "Siraj",
+          "customerEmail": "siraj@gmail.com",
+          "customerPhone": "9645895733",
+          "customerAddress": "PP house,Valioyora Po,vengara",
+          "items": [
+            {
+              "id": "4",
+              "name": "Baby Shampoo - 200ml",
+              "category": "Baby Care",
+              "price": 249,
+              "rating": "4.3",
+              "image": "/images/babeshampoo.avif",
+              "description": "Tear-free formula made with gentle ingredients.",
+              "stock": "25",
+              "quantity": 3
+            },
+            {
+              "id": "7",
+              "name": "Diaper Pack - Medium (24 pcs)",
+              "category": "Diapering",
+              "price": 549,
+              "rating": "4.5",
+              "image": "/images/diaperset.jpg",
+              "description": "Super-absorbent leak-proof diapers for newborns.",
+              "stock": "50",
+              "quantity": 2
+            }
+          ],
+          "totalAmount": 1845,
+          "orderDate": "2025-07-08T04:00:42.373Z"
+        },
+        {
+          "orderId": "ORD-1751950262401-6035",
+          "customerName": "shub",
+          "customerEmail": "shub@gmail.com",
+          "customerPhone": "9645895733",
+          "customerAddress": "shubbbnnnmm nn",
+          "items": [
+            {
+              "id": "9",
+              "name": "Soft Plush Elephant Toy",
+              "category": "Toys",
+              "price": 399,
+              "rating": "4.8",
+              "image": "/images/Soft Plush Elephant Toy.jpg",
+              "description": "Cuddly and safe soft toy for newborns.",
+              "stock": "18",
+              "quantity": 2
+            }
+          ],
+          "totalAmount": 798,
+          "orderDate": "2025-07-08T04:51:02.401Z"
         }
       ]
     },
@@ -749,6 +593,126 @@
       "name": "ssss",
       "email": "s@gmail.com",
       "password": "12345678"
+    },
+    {
+      "id": "412c",
+      "name": "hamid",
+      "email": "hamid@gmail.com",
+      "password": "hamid12345",
+      "cart": [
+        {
+          "id": "6",
+          "name": "Silicone Bib - Pink",
+          "category": "Feeding",
+          "price": 199,
+          "rating": "4.6",
+          "image": "/images/feeding3.jpg",
+          "description": "Waterproof bib with food catcher pocket.",
+          "stock": "35",
+          "quantity": 4
+        },
+        {
+          "id": "5",
+          "name": "Feeding Bottle - 150ml",
+          "category": "Feeding",
+          "price": 299,
+          "rating": "4.4",
+          "image": "/images/feedingbottle.jpg",
+          "description": "Anti-colic BPA-free feeding bottle.",
+          "stock": "40",
+          "quantity": 2
+        },
+        {
+          "id": "16",
+          "name": "Baby Bottle",
+          "price": 199,
+          "image": "/images/feedingbottle.jpg",
+          "category": "Feeding",
+          "description": "Soft bottles for your little one",
+          "stock": "200",
+          "rating": "4.5",
+          "quantity": 1
+        }
+      ],
+      "orders": [
+        {
+          "orderId": "ORD-1751965893452-928",
+          "customerName": "hamid sha",
+          "customerEmail": "hamid@gmail.com",
+          "customerPhone": "7854321899",
+          "customerAddress": "hamid sha \nvengara",
+          "items": [
+            {
+              "id": "5",
+              "name": "Feeding Bottle - 150ml",
+              "category": "Feeding",
+              "price": 299,
+              "rating": "4.4",
+              "image": "/images/feedingbottle.jpg",
+              "description": "Anti-colic BPA-free feeding bottle.",
+              "stock": "40",
+              "quantity": 2
+            },
+            {
+              "id": "6",
+              "name": "Silicone Bib - Pink",
+              "category": "Feeding",
+              "price": 199,
+              "rating": "4.6",
+              "image": "/images/feeding3.jpg",
+              "description": "Waterproof bib with food catcher pocket.",
+              "stock": "35",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 797,
+          "orderDate": "2025-07-08T09:11:33.452Z"
+        },
+        {
+          "orderId": "ORD-1751969303193-9047",
+          "customerName": "Siraj",
+          "customerEmail": "siraj@gmail.com",
+          "customerPhone": "7854321899",
+          "customerAddress": "vmegara hdhd",
+          "items": [
+            {
+              "id": "17",
+              "name": "Baby Toy",
+              "price": 599,
+              "image": "/images/toys.avif",
+              "category": "Toys",
+              "description": "Small soft and fluffy Toy for your newborn ",
+              "stock": "400",
+              "rating": "4.5",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 599,
+          "orderDate": "2025-07-08T10:08:23.193Z"
+        }
+      ],
+      "wishlist": [
+        {
+          "id": "2",
+          "name": "Newborn Romper - Animal Print",
+          "category": "Clothing",
+          "price": 499,
+          "rating": " 3",
+          "image": "/images/romberanimalprint.jpg",
+          "description": "Cute animal printed romper for daily comfort.",
+          "stock": "15"
+        },
+        {
+          "id": "6",
+          "name": "Silicone Bib - Pink",
+          "category": "Feeding",
+          "price": 199,
+          "rating": "4.6",
+          "image": "/images/feeding3.jpg",
+          "description": "Waterproof bib with food catcher pocket.",
+          "stock": "35"
+        }
+      ]
     }
   ]
 }

@@ -51,7 +51,7 @@ function Navbar() {
       
 //     </nav>
  <nav className="sticky top-0 z-50 bg-white shadow-md px-6 md:px-12 py-4 flex justify-between items-center">
-      {/* Logo */}
+      
       <Link to="/" className="text-2xl font-bold text-pink-600 tracking-wide">
         BabeNest
       </Link>
@@ -89,9 +89,6 @@ function Navbar() {
         </div>
       ) : (
         <div className="flex items-center gap-6 text-sm font-medium">
-          <Link to="/" className="hover:text-pink-600 transition">
-            Home
-          </Link>
           <Link to="/products" className="hover:text-pink-600 transition">
             Products
           </Link>

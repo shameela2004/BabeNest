@@ -101,7 +101,7 @@ const [categoryFilter, setCategoryFilter] = useState(defaultCategory);
   return (
     <div >
        {/* Filters */}
-<div className="w-full bg-pink-50 border-t border-pink-200 shadow-sm mb-6">
+<div className="w-full bg-pink-50 border-t border-pink-200 shadow-sm mb-6 fixed z-40 top-16">
   <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap md:flex-nowrap gap-4 items-center justify-between">
     <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
     <CategoryFilter
@@ -125,7 +125,7 @@ const [categoryFilter, setCategoryFilter] = useState(defaultCategory);
 
 
       {/* Products Display */}
-      <div className="flex flex-wrap gap-6 justify-center">
+      <div className="flex flex-wrap gap-6 justify-center mt-20">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />

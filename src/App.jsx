@@ -25,13 +25,14 @@ function App() {
         <Route path='/cart' element={<ProtectedRoute><CartPage/></ProtectedRoute>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/register' element={<Register/>}></Route>
-        <Route path='cart' element={<CartPage/>}></Route>
-        <Route path='login' element={<Login/>}></Route>
-        <Route path='register' element={<Register/>}></Route>
-        <Route path="/checkout" element={<Checkout />} />
+        {/* <Route path='/cart' element={<CartPage/>}></Route> */}
+        {/* <Route path='/login' element={<Login/>}></Route>
+        <Route path='/register' element={<Register/>}></Route> */}
+        <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
         <Route path="/myorders" element={<OrderHistory />} />
         <Route path="/products/:id" element={<ProductDetails/>}/>
         <Route path="/wishlist" element={<Wishlist/>}/>
+        {/* <Route path="/orderproduct" element={<BuyNow/>}/> */}
 
       </Routes>
      

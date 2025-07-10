@@ -68,7 +68,7 @@ function Checkout() {
     navigate("/login");
     return;
   }
-
+  
   if (cartItems.length === 0) {
     toast.error("Your cart is empty.");
     return;
@@ -100,15 +100,15 @@ function Checkout() {
 
    
 
-// Wait 3s, then clear cart and navigate safely
+
 setTimeout(() => {
-  clearCart();           // update context
+  clearCart();  //clear cart
 }, 3100); 
   } catch (error) {
     console.error("ORDER ERROR:", error.response?.data || error.message);
     toast.error("Failed to place order. Please try again.");
   }
-  navigate("/")
+  navigate("/") //navigate to home
    toast.success("🎉 Order placed successfully!", {
   duration: 3000,
 });
@@ -119,7 +119,7 @@ setTimeout(() => {
     <div className="max-w-4xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Checkout</h1>
 
-      {/* Cart Items Preview */}
+      {/* Cart Items Display*/}
       <div className="space-y-4 mb-6">
         {cartItems.map((item) => (
           <div
@@ -145,7 +145,7 @@ setTimeout(() => {
         ))}
       </div>
 
-      {/* Address Form */}
+      {/*form*/}
       <form onSubmit={handlePlaceOrder} className="space-y-4" noValidate>
         <div>
           <label className="block mb-1 font-semibold">Full Name</label>

@@ -3,7 +3,7 @@ import { useCart } from '../context/CartProvider'
 import Button from './common/Button'
 import { useNavigate } from 'react-router-dom'
 import { useWishlist } from '../context/WishlistProvider'
-import { FaHeart } from 'react-icons/fa'  // <-- Import heart icon
+import { FaHeart } from 'react-icons/fa'
 
 function ProductCard({ product }) {
   const navigate = useNavigate()
@@ -44,7 +44,8 @@ function ProductCard({ product }) {
       className="w-74 p-4 border rounded-2xl shadow hover:shadow-lg bg-white text-center transition duration-300 ease-in-out relative cursor-pointer"
       onClick={handleNavigate}
     >
-      {/* Heart icon - top right corner */}
+      
+
       <FaHeart
         onClick={toggleWishlist}
         className={`absolute top-3 right-3 cursor-pointer  ${
@@ -80,18 +81,3 @@ function ProductCard({ product }) {
 
 export default ProductCard
 
-// import React from 'react'
-
-// function ProductCard({product}) {
-//   return (
-//     <div className="w-64 p-4 border rounded-2xl shadow hover:shadow-lg bg-white text-center transition duration-300 ease-in-out">
-//        <img src={product.image} alt={product.name}    className="w-full h-40 object-cover rounded" loading="lazy"/>
-//        <h3 className="text-lg text-gray-800 font-semibold mt-2 ">{product.name}</h3>
-//        <p className="text-pink-600 font-bold mt-1">₹{product.price}</p>
-//        <p className="text-pink-600 font-bold mt-1">{product.category}</p>
-
-//     </div>
-//   )
-// }
-
-// export default ProductCard

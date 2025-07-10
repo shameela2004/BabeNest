@@ -54,7 +54,7 @@ function ProductDetails() {
 
           {/* Rating */}
           <div>
-            <p className="text-sm text-gray-600">Rating:</p>
+            {/* <p className="text-sm text-gray-600">Rating:</p> */}
             {displayStars(product.rating)}
           </div>
 

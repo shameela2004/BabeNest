@@ -10,9 +10,9 @@ function Wishlist() {
   const { wishlistItems, removeFromWishlist } = useWishlist()
   const navigate=useNavigate()
   const { addToCart } = useCart()
-    const handleNavigate = () => {
-    navigate(`/products/${product.id}`)
-  }
+  //   const handleNavigate = () => {
+  //   navigate(`/products/${product.id}`)
+  // }
 
   if (wishlistItems.length === 0) {
     return (

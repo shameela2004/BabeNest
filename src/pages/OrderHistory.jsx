@@ -169,6 +169,7 @@ function OrderHistory() {
       </div>
     );
   }
+  // console.log("Orders from user object:", user.orders);
 
   const orders = user.orders || [];
 
@@ -180,7 +181,7 @@ function OrderHistory() {
     );
   }
 
-  // Format date helper
+  //Format date..
   const formatDate = (isoDate) => {
     const date = new Date(isoDate);
     return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
