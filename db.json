@@ -5,130 +5,146 @@
       "name": "Newborn Romper - Animal Print",
       "category": "Clothing",
       "price": "399",
-      "rating": " 3",
       "image": "/images/romberanimalprint.jpg",
       "description": "Cute animal printed romper for daily comfort..",
-      "stock": "20"
+      "stock": "20",
+      "reviews": []
     },
     {
       "id": "3",
       "name": "Diaper Rash Cream - 50g",
       "category": "Baby Care",
       "price": 199,
-      "rating": "4.6",
       "image": "/images/rashcream.avif",
       "description": "Protects and heals baby skin from rashes.",
-      "stock": "30"
+      "stock": "30",
+      "reviews": []
     },
     {
       "id": "4",
       "name": "Baby Shampoo - 200ml",
       "category": "Baby Care",
       "price": 249,
-      "rating": "4.3",
       "image": "/images/babeshampoo.avif",
       "description": "Tear-free formula made with gentle ingredients.",
-      "stock": "25"
+      "stock": "25",
+      "reviews": [
+        {
+          "userName": "a",
+          "rating": 4,
+          "review": "very nice shampoo...100% suitable for the babies",
+          "date": "2025-07-11T09:18:33.697Z"
+        }
+      ],
+      "rating": "3.5"
     },
     {
       "id": "5",
       "name": "Feeding Bottle - 150ml",
       "category": "Feeding",
       "price": 299,
-      "rating": "4.4",
       "image": "/images/feedingbottle.jpg",
       "description": "Anti-colic BPA-free feeding bottle.",
-      "stock": "40"
+      "stock": "40",
+      "reviews": []
     },
     {
       "id": "6",
       "name": "Silicone Bib - Pink",
       "category": "Feeding",
       "price": 199,
-      "rating": "4.6",
       "image": "/images/feeding3.jpg",
       "description": "Waterproof bib with food catcher pocket.",
-      "stock": "35"
+      "stock": "35",
+      "reviews": []
     },
     {
       "id": "7",
       "name": "Diaper Pack - Medium (24 pcs)",
       "category": "Diapering",
       "price": 549,
-      "rating": "4.5",
       "image": "/images/diaperset.jpg",
       "description": "Super-absorbent leak-proof diapers for newborns.",
-      "stock": "50"
+      "stock": "50",
+      "reviews": [
+        {
+          "userName": "a",
+          "rating": 5,
+          "review": "good",
+          "date": "2025-07-11T09:22:30.244Z"
+        }
+      ],
+      "rating": "5.0"
     },
     {
       "id": "8",
       "name": "Changing Mat - Waterproof",
       "category": "Diapering",
       "price": 349,
-      "rating": "4.1",
       "image": "/images/changingmate.jpg",
       "description": "Soft, foldable mat ideal for travel and home use.",
-      "stock": "22"
+      "stock": "22",
+      "reviews": []
     },
     {
       "id": "9",
       "name": "Soft Plush Elephant Toy",
       "category": "Toys",
       "price": 399,
-      "rating": "4.8",
       "image": "/images/Soft Plush Elephant Toy.jpg",
       "description": "Cuddly and safe soft toy for newborns.",
-      "stock": "18"
+      "stock": "18",
+      "reviews": []
     },
     {
       "id": "10",
       "name": "Rattle Set - 4 pieces",
       "category": "Toys",
       "price": 299,
-      "rating": "4.2",
       "image": "/images/rattkes.avif",
       "description": "Colorful set of 4 baby rattles for sensory development.",
-      "stock": "28"
+      "stock": "28",
+      "reviews": []
     },
     {
       "id": "11",
       "name": "Baby Mattress Set - Stars Design",
       "category": "Bedding",
       "price": 799,
-      "rating": "4.6",
       "image": "/images/Baby Mattress Set.avif",
       "description": "Comfortable mattress with mosquito net for newborns.",
-      "stock": "12"
+      "stock": "12",
+      "reviews": []
     },
     {
       "id": "12",
       "name": "Swaddle Blanket - Pack of 2",
       "category": "Bedding",
       "price": 449,
-      "rating": "4.3",
       "image": "/images/Swaddle Blanket.jpg",
       "description": "Breathable muslin swaddles in pastel colors.",
-      "stock": "30"
+      "stock": "30",
+      "reviews": []
     },
     {
       "id": "13",
       "name": "Baby Carrier - Front Facing",
       "category": "Travel",
       "price": 1299,
-      "rating": "4.5",
       "image": "/images/babycarrier.jpg",
       "description": "Ergonomic baby carrier for front and back carry.",
-      "stock": "10"
+      "stock": "10",
+      "reviews": []
     },
     {
       "id": "14",
       "name": "Stroller - Lightweight Foldable",
       "category": "Travel",
       "price": 2499,
-      "rating": "4.7",
       "image": "/images/stroller.jpg",
       "description": "Portable stroller with 3-position recline.",
-      "stock": "8"
+      "stock": "8",
+      "reviews": []
     },
     {
       "id": "16",
@@ -138,7 +154,7 @@
       "category": "Feeding",
       "description": "Soft bottles for your little one",
       "stock": "200",
-      "rating": "4.5"
+      "reviews": []
     },
     {
       "id": "17",
@@ -148,17 +164,17 @@
       "category": "Toys",
       "description": "Small soft and fluffy Toy for your newborn ",
       "stock": "400",
-      "rating": "4.5"
+      "reviews": []
     },
     {
-      "id": "f356",
+      "id": "9cd9",
       "name": "Newborn Onesie",
-      "price": "245",
-      "image": "blob:http://localhost:5173/c11c2eff-7407-43fe-a39d-f10b2b2135e4",
+      "price": "249",
+      "image": "\\images\\newborn-onesise.jpg",
       "category": "Clothing",
-      "description": "Cozy Clothing for your little one",
-      "stock": "9",
-      "rating": "3"
+      "description": "Comfy and soft clothing ..",
+      "stock": "12",
+      "reviews": []
     }
   ],
   "users": [
@@ -167,6 +183,8 @@
       "email": "admin@babenest.com",
       "password": "admin@123",
       "role": "admin",
+      "isBlocked": false,
+      "createdAt": "2025-07-11T10:00:00.000Z",
       "cart": [],
       "orders": [],
       "wishlist": [
@@ -189,22 +207,20 @@
       "password": "23",
       "cart": [],
       "wishlist": [],
-      "orders": []
-    },
-    {
-      "id": "b24a",
-      "name": "",
-      "email": "",
-      "password": "",
-      "cart": [],
-      "wishlist": [],
-      "orders": []
+      "orders": [],
+      "isBlocked": false,
+      "role": "user",
+      "blocked": true,
+      "createdAt": "2025-07-11T10:00:00.000Z"
     },
     {
       "id": "84f8",
       "name": "a",
       "email": "a@gmail.com",
       "password": "123",
+      "isBlocked": false,
+      "role": "user",
+      "createdAt": "2025-07-11T10:00:00.000Z",
       "cart": [
         {
           "id": "3",
@@ -238,6 +254,36 @@
           "stock": "400",
           "rating": "4.5",
           "quantity": 1
+        },
+        {
+          "id": "14",
+          "name": "Stroller - Lightweight Foldable",
+          "category": "Travel",
+          "price": 2499,
+          "rating": "4.7",
+          "image": "/images/stroller.jpg",
+          "description": "Portable stroller with 3-position recline.",
+          "stock": "8",
+          "quantity": 2
+        },
+        {
+          "id": "4",
+          "name": "Baby Shampoo - 200ml",
+          "category": "Baby Care",
+          "price": 249,
+          "image": "/images/babeshampoo.avif",
+          "description": "Tear-free formula made with gentle ingredients.",
+          "stock": "25",
+          "reviews": [
+            {
+              "userName": "a",
+              "rating": 4,
+              "review": "very nice shampoo...100% suitable for the babies",
+              "date": "2025-07-11T09:18:33.697Z"
+            }
+          ],
+          "rating": "3.5",
+          "quantity": 3
         }
       ],
       "wishlist": [
@@ -349,7 +395,7 @@
           ],
           "totalAmount": 1845,
           "orderDate": "2025-07-08T04:00:42.373Z",
-          "status": "pending"
+          "status": "delivered"
         },
         {
           "orderId": "ORD-1751950262401-6035",
@@ -380,19 +426,28 @@
       "id": "5282",
       "name": "s",
       "email": "s@gmail.com",
-      "password": "123"
+      "password": "123",
+      "isBlocked": false,
+      "role": "user",
+      "createdAt": "2025-07-11T10:00:00.000Z"
     },
     {
       "id": "1e6b",
       "name": "ssss",
       "email": "s@gmail.com",
-      "password": "12345678"
+      "password": "12345678",
+      "isBlocked": false,
+      "role": "user",
+      "blocked": false,
+      "createdAt": "2025-07-11T10:00:00.000Z"
     },
     {
       "id": "412c",
       "name": "hamid",
       "email": "hamid@gmail.com",
       "password": "hamid12345",
+      "isBlocked": false,
+      "createdAt": "2025-07-11T10:00:00.000Z",
       "cart": [
         {
           "id": "6",
@@ -484,7 +539,7 @@
           ],
           "totalAmount": 599,
           "orderDate": "2025-07-08T10:08:23.193Z",
-          "status": "pending"
+          "status": "shipped"
         }
       ],
       "wishlist": [

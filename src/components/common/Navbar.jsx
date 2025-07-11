@@ -79,13 +79,16 @@ function Navbar() {
           <Link to="/myorders" className="hover:text-pink-600 transition">
             Orders
           </Link>
+          <Link to="/profile" className="hover:text-pink-600 transition">
+            Profile
+          </Link>
 
-          <button
+          {/* <button
             onClick={handleLogout}
             className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm transition"
           >
             Logout
-          </button>
+          </button> */}
         </div>
       ) : (
         <div className="flex items-center gap-6 text-sm font-medium">

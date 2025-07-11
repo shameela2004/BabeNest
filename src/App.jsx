@@ -20,6 +20,9 @@ import AddProduct from './pages/admin/AddProduct'
 import EditProduct from './pages/admin/EditProduct'
 import AdminRoute from './components/common/AdminRoute'
 import ManageOrders from './pages/admin/ManageOrders'
+import UserDetails from './pages/admin/UserDetails'
+import ManageUsers from './pages/admin/ManageUsers'
+import UserProfile from './pages/UserProfile'
 
 function App() {
   return (
@@ -39,6 +42,8 @@ function App() {
         <Route path="/products/:id" element={<ProductDetails/>}/>
 
         <Route path="/wishlist" element={<Wishlist/>}/>
+        <Route path="/profile" element={<UserProfile/>}/>
+
 
         <Route path="/admin" element={<AdminRoute><AdminLayout/></AdminRoute>}>
         <Route index element={<AdminDashboard/>}/>
@@ -46,7 +51,8 @@ function App() {
         <Route path="/admin/products/add" element={<AddProduct/>}/>
         <Route path="/admin/products/edit/:id" element={<EditProduct/>}/>
         <Route path="/admin/orders" element={<ManageOrders/>}/>
-
+        <Route path="/admin/users" element={<ManageUsers/>}/>
+        <Route path="/admin/users/:id" element={<UserDetails/>}/>
         </Route>
 
       </Routes>

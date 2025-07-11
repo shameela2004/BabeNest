@@ -12,7 +12,6 @@ function EditProduct() {
     category: '',
     description: '',
     stock: '',
-    rating: ''
   });
 
   const categories = [
@@ -41,13 +40,7 @@ function EditProduct() {
     setProduct({ ...product, [e.target.name]: e.target.value });
   };
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setProduct({ ...product, image: imageUrl });
-    }
-  };
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -93,17 +86,11 @@ function EditProduct() {
           <input type="text" name="stock" value={product.stock} onChange={handleChange} className="w-full border rounded px-3 py-2" />
         </div>
 
-        <div>
-          <label className="block font-semibold">Rating</label>
-          <input type="text" name="rating" value={product.rating} onChange={handleChange} className="w-full border rounded px-3 py-2" />
-        </div>
+        
 
         <div>
           <label className="block font-semibold mb-1">Upload Image</label>
-          <input type="file" accept="image/*" onChange={handleImageUpload} className="block" />
-          {product.image && (
-            <img src={product.image} alt="preview" className="w-32 h-32 mt-2 object-cover rounded" />
-          )}
+          <input type="text" name="image" value={product.image} onChange={handleChange} className="w-full border rounded px-3 py-2" />
         </div>
 
         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">

@@ -11,7 +11,6 @@ function AddProduct() {
     category: '',
     description: '',
     stock: '',
-    rating: ''
   });
 
   const categories = [
@@ -28,13 +27,7 @@ function AddProduct() {
     setProduct({ ...product, [e.target.name]: e.target.value });
   };
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setProduct({ ...product, image: imageUrl });
-    }
-  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -120,35 +113,19 @@ function AddProduct() {
           />
         </div>
 
+
         <div>
-          <label className="block font-semibold mb-1">Rating</label>
-          <input
-            type="number"
+          <label className="block font-semibold mb-1"> Image src</label>
+           <input
+            type="text"
             step="0.1"
-            name="rating"
-            placeholder="E.g. 4.5"
-            value={product.rating}
+            name="image"
+            placeholder="E.g. /images/toyimage.jpg"
+            value={product.image}
             onChange={handleChange}
             className="w-full border px-3 py-2 rounded"
             required
           />
-        </div>
-
-        <div>
-          <label className="block font-semibold mb-1">Upload Product Image</label>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageUpload}
-            className="w-full border px-3 py-2 rounded"
-          />
-          {product.image && (
-            <img
-              src={product.image}
-              alt="Preview"
-              className="mt-3 w-32 h-32 object-cover rounded"
-            />
-          )}
         </div>
 
         <button

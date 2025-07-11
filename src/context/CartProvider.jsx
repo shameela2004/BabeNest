@@ -42,7 +42,7 @@ const addToServer = async (newCart) => {
       cart: newCart,
     });
 
-    // ✅ Only update localStorage directly, avoid triggering context updates
+    //  Only update localStorage directly, avoid triggering context updates
     const updatedUser = { ...user, cart: newCart };
     localStorage.setItem("user", JSON.stringify(updatedUser));
   } catch (err) {
@@ -61,7 +61,7 @@ const addToServer = async (newCart) => {
         const UpdatedCart=(()=>{
 
             const existing=cartItems.find(item=>item.id===product.id)
-            toast.success('Increased quantity!');
+            
              if(existing){
                 toast.success('Increased quantity!');
                 return cartItems.map(item=>

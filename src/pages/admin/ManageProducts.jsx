@@ -7,6 +7,7 @@ function ManageProducts() {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const navigate = useNavigate();
+  
 
   useEffect(() => {
     fetchProducts();
@@ -42,7 +43,7 @@ function ManageProducts() {
   return (
     <div className="p-6">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Manage Products</h1>
+      <h1 className="text-3xl font-bold mb-6 text-pink-600">Manage Products</h1>
         <button
           onClick={() => navigate('/admin/products/add')}
           className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
@@ -53,14 +54,14 @@ function ManageProducts() {
 
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
-          <thead className="bg-gray-100 text-gray-700 text-left">
+          <thead className="bg-pink-100 text-pink-700 text-left">
             <tr>
-              <th className="p-4">Image</th>
-              <th className="p-4">Name</th>
-              <th className="p-4">Price</th>
-              <th className='p-4'>Category</th>
-              <th className="p-4">Stock</th>
-              <th className="p-4">Actions</th>
+              <th className="p-4 border-b">Image</th>
+              <th className="p-4 border-b">Name</th>
+              <th className="p-4 border-b">Price</th>
+              <th className='p-4 border-b'>Category</th>
+              <th className="p-4 border-b">Stock</th>
+              <th className="p-4 border-b">Actions</th>
             </tr>
           </thead>
           <tbody>
