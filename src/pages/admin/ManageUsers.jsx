@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { FaBan, FaUser } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 function ManageUsers() {
   const [users, setUsers] = useState([]);
@@ -22,7 +23,7 @@ function ManageUsers() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/users');
+      const res = await axios.get('http://localhost:3001/users');
       const nonAdminUsers = res.data.filter(user => user.role !== 'admin');
       setUsers(nonAdminUsers);
     } catch (err) {
@@ -54,13 +55,35 @@ function ManageUsers() {
   };
 
   const toggleBlock = async (user) => {
+    const action = user.blocked ? 'Unblock' : 'Block';
+
+  const result = await Swal.fire({
+    title: `${action} this user?`,
+    text: `Are you sure you want to ${action.toLowerCase()} ${user.name}?`,
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: user.blocked ? '#3085d6' : '#e3342f',
+    cancelButtonColor: '#6c757d',
+    confirmButtonText: `Yes, ${action.toLowerCase()}!`
+  });
+
+  if (result.isConfirmed) {
     try {
       const updated = { ...user, blocked: !user.blocked };
-      await axios.put(`http://localhost:3000/users/${user.id}`, updated);
-      fetchUsers(); // refresh
+      await axios.put(`http://localhost:3001/users/${user.id}`, updated);
+      await fetchUsers(); // refresh
+      Swal.fire({
+        title: `${action}ed!`,
+        text: `User has been ${action.toLowerCase()}ed successfully.`,
+        icon: 'success',
+        timer: 1500,
+        showConfirmButton: false,
+      });
     } catch (err) {
       console.error('Error blocking/unblocking user:', err);
+      Swal.fire('Failed', 'Something went wrong.', 'error');
     }
+  }
   };
 
   const totalPages = Math.ceil(

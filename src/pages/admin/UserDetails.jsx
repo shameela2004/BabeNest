@@ -13,7 +13,7 @@ function UserDetails() {
 
   const fetchUser = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/users/${id}`);
+      const res = await axios.get(`http://localhost:3001/users/${id}`);
       setUser(res.data);
     } catch (err) {
       console.error('Error fetching user:', err);

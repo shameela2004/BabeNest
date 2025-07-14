@@ -38,7 +38,7 @@ export const CartProvider=({children})=>{
 const addToServer = async (newCart) => {
   if (!user || !user.id) return;
   try {
-    await axios.patch(`http://localhost:3000/users/${user.id}`, {
+    await axios.patch(`http://localhost:3001/users/${user.id}`, {
       cart: newCart,
     });
 
@@ -59,7 +59,7 @@ const addToServer = async (newCart) => {
         return
       }
         const UpdatedCart=(()=>{
-
+             if (!user || !user.id) return
             const existing=cartItems.find(item=>item.id===product.id)
             
              if(existing){

@@ -126,9 +126,9 @@ function ProductCard({ product }) {
 
   return (
     <div
-      className="bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden relative transition-transform duration-300 border hover:border-pink-300"
-      onClick={handleNavigate}
-    >
+  className="bg-white rounded-xl shadow hover:shadow-lg transform hover:-translate-y-1 transition cursor-pointer border hover:border-pink-400"
+  onClick={handleNavigate}
+>
       {/* Wishlist Icon */}
       <button
         onClick={toggleWishlist}
@@ -142,14 +142,14 @@ function ProductCard({ product }) {
       </button>
 
       {/* Product Image */}
-      <div className="w-full aspect-[4/3] bg-gray-100">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-full object-contain p-2"
-          loading="lazy"
-        />
-      </div>
+      <div className="relative overflow-hidden aspect-[4/3] bg-gray-100 rounded-t-xl">
+  <img
+    src={product.image}
+    alt={product.name}
+    className="w-full h-full object-contain p-3 hover:scale-105 transition duration-500"
+    loading="lazy"
+  />
+</div>
 
       {/* Product Details */}
       <div className="p-4 text-center">

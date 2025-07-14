@@ -15,7 +15,7 @@ function ManageProducts() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/products");
+      const res = await axios.get("http://localhost:3001/products");
       setProducts(res.data);
     } catch (err) {
       console.error("Error fetching products:", err);
@@ -33,7 +33,7 @@ function ManageProducts() {
     confirmButtonText: 'Yes, delete it!'
   }).then(async (result) => {
     if (result.isConfirmed) {
-      await axios.delete(`http://localhost:3000/products/${product.id}`);
+      await axios.delete(`http://localhost:3001/products/${product.id}`);
       setProducts(prev => prev.filter(p => p.id !== product.id));
       Swal.fire('Deleted!', 'Product has been deleted.', 'success');
     }

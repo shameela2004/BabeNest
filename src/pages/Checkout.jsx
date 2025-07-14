@@ -92,7 +92,7 @@ function Checkout() {
     const updatedOrders = [...(user.orders || []), newOrder];
     const updatedUser = { ...user, cart: [], orders: updatedOrders };
 
-    await axios.patch(`http://localhost:3000/users/${user.id}`, {
+    await axios.patch(`http://localhost:3001/users/${user.id}`, {
       cart: [],
       orders: updatedOrders,
     });

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function ManageOrders() {
   const [orders, setOrders] = useState([]);
@@ -79,7 +80,7 @@ function ManageOrders() {
       const updatedOrders = user.orders.map(order =>
         order.orderId === selectedOrder.orderId ? { ...order, status: newStatus } : order
       );
-      await axios.put(`http://localhost:3000/users/${selectedOrder.userId}`, {
+      await axios.put(`http://localhost:3001/users/${selectedOrder.userId}`, {
         ...user,
         orders: updatedOrders,
       });
@@ -88,9 +89,10 @@ function ManageOrders() {
       setOrders(prev =>
         prev.map(o => o.orderId === selectedOrder.orderId ? { ...o, status: newStatus } : o)
       );
+      toast.success("Status Updated ")
     } catch (error) {
       console.error("Failed to update status:", error);
-      alert("Failed to update status.");
+      toast.error("Failed to update status.");
     } finally {
       setUpdatingStatus(false);
     }

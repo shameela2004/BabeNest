@@ -41,7 +41,7 @@ function App() {
         <Route path="/myorders" element={<OrderHistory />} />
         <Route path="/products/:id" element={<ProductDetails/>}/>
 
-        <Route path="/wishlist" element={<Wishlist/>}/>
+        <Route path="/wishlist" element={<ProtectedRoute><Wishlist/></ProtectedRoute>}/>
         <Route path="/profile" element={<UserProfile/>}/>
 
 

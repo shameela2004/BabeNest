@@ -8,6 +8,7 @@ import {
   FaUsers,
   FaSignOutAlt
 } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 function AdminLayout() {
   const { pathname } = useLocation();
@@ -21,12 +22,26 @@ function AdminLayout() {
   ];
 
   const handleLogout = () => {
-    const confirmed = window.confirm("Are you sure you want to logout?");
-    if (confirmed) {
-      // Clear auth data (adjust as needed based on how you're storing login)
-      localStorage.removeItem('authUser'); 
-      navigate('/login'); // redirect to login page
+    // const confirmed = window.confirm("Are you sure you want to logout?");
+    // if (confirmed) {
+    //   localStorage.removeItem('authUser'); 
+    //   navigate('/login'); // redirect to login page
+    // }
+      Swal.fire({
+    title: `Logout from this account?`,
+    text: "",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#e3342f',
+    cancelButtonColor: '#6c757d',
+    confirmButtonText: 'Yes!'
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+         localStorage.removeItem('authUser'); 
+      navigate('/login'); 
+      Swal.fire('Logout success!', 'success');
     }
+  });
   };
 
   return (

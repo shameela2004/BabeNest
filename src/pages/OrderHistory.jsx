@@ -231,12 +231,12 @@ const [refresh, setRefresh] = useState(false);
 
   const handleCancel = async (order) => {
     try {
-      const res = await axios.get(`http://localhost:3000/users/${user.id}`);
+      const res = await axios.get(`http://localhost:3001/users/${user.id}`);
       const userData = res.data;
       const updated = userData.orders.map(o =>
         o.orderId === order.orderId ? { ...o, status: 'cancelled' } : o
       );
-      await axios.put(`http://localhost:3000/users/${user.id}`, {...userData, orders: updated});
+      await axios.put(`http://localhost:3001/users/${user.id}`, {...userData, orders: updated});
       login({ ...user, orders: updated }); // refresh context
       alert('Order cancelled.');
       setRefresh(r => !r);
@@ -254,7 +254,7 @@ const handleReviewSubmit = async (item) => {
 
   try {
     // Get product
-    const res = await axios.get(`http://localhost:3000/products/${item.id}`);
+    const res = await axios.get(`http://localhost:3001/products/${item.id}`);
     const product = res.data;
 
     const existingReviews = product.reviews || [];
@@ -288,7 +288,7 @@ const handleReviewSubmit = async (item) => {
     ).toFixed(1);
 
     // Update product
-    await axios.put(`http://localhost:3000/products/${item.id}`, {
+    await axios.put(`http://localhost:3001/products/${item.id}`, {
       ...product,
       rating: avgRating,
       reviews: updatedReviews,

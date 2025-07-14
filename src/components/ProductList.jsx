@@ -210,18 +210,23 @@ function ProductList() {
 
       {/* === Product Grid === */}
       <div className="max-w-7xl mx-auto px-4 py-8">
-        {filteredProducts.length === 0 ? (
-          <p className="text-gray-500 text-center text-lg mt-10">
-            No products found. Try changing filters.
-          </p>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {filteredProducts.map(product => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        )}
+  {filteredProducts.length === 0 ? (
+    <p className="text-gray-500 text-center text-lg mt-10">
+      No products found. Try changing filters.
+    </p>
+  ) : (
+    <>
+      {/* <h2 className="text-3xl font-bold text-pink-700 mb-6 text-center">All Products</h2> */}
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {filteredProducts.map(product => (
+          <ProductCard key={product.id} product={product} />
+        ))}
       </div>
+    </>
+  )}
+</div>
+
     </div>
   )
 }

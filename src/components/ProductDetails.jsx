@@ -149,12 +149,29 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useCart } from '../context/CartProvider';
 import Navbar from './common/Navbar';
 import axios from 'axios';
+import { FaHeart } from 'react-icons/fa';
+import { useWishlist } from '../context/WishlistProvider';
 
 function ProductDetails() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const { addToCart } = useCart();
   const navigate = useNavigate();
+
+  const { wishlistItems, addToWishlist, removeFromWishlist } = useWishlist()
+  
+    const isInWishlist = wishlistItems.some(item => item.id === id)
+  
+    const toggleWishlist = (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+  
+      if (isInWishlist) {
+        removeFromWishlist(product.id)
+      } else {
+        addToWishlist(product)
+      }
+    }
 
   useEffect(() => {
     axios
@@ -183,8 +200,20 @@ function ProductDetails() {
     <>
       <Navbar />
       <div className="max-w-7xl mx-auto p-6 md:flex gap-10 ">
+          
         {/* Left Side Sticky: Image & Buttons */}
         <div className="md:w-1/2 sticky top-24 self-start space-y-6 ">
+          {/* Wishlist Icon */}
+              <button
+                onClick={toggleWishlist}
+                className="absolute top-3 right-3 z-10 bg-white rounded-full p-2 shadow-md hover:scale-110 transition"
+                title={isInWishlist ? 'Remove from wishlist' : 'Add to wishlist'}
+              >
+                <FaHeart
+                  size={20}
+                  className={`${isInWishlist ? 'text-red-500' : 'text-gray-400'}`}
+                />
+              </button>
           <img
             src={product.image}
             alt={product.name}

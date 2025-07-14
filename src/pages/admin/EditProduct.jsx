@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 function EditProduct() {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ function EditProduct() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/products/${id}`);
+        const res = await axios.get(`http://localhost:3001/products/${id}`);
         setProduct(res.data);
       } catch (err) {
         console.error("Error fetching product:", err);
@@ -45,8 +46,8 @@ function EditProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3000/products/${id}`, product);
-      alert("Product updated successfully!");
+      await axios.put(`http://localhost:3001/products/${id}`, product);
+      toast.success("Product updated successfully!");
       navigate('/admin/products');
     } catch (err) {
       console.error("Error updating product:", err);

@@ -18,8 +18,8 @@ const AdminDashboard = () => {
   }, []);
 
   const fetchData = async () => {
-    const userRes = await axios.get("http://localhost:3000/users");
-    const productRes = await axios.get("http://localhost:3000/products");
+    const userRes = await axios.get("http://localhost:3001/users");
+    const productRes = await axios.get("http://localhost:3001/products");
 
     const allUsers = userRes.data;
     const allOrders = allUsers.flatMap(user =>

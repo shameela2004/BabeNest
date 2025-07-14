@@ -5,7 +5,7 @@
       "name": "Newborn Romper - Animal Print",
       "category": "Clothing",
       "price": "399",
-      "image": "/images/romberanimalprint.jpg",
+      "image": "https://images.unsplash.com/photo-1672863279585-f50438c73b62?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Cute animal printed romper for daily comfort..",
       "stock": "20",
       "reviews": []
@@ -43,7 +43,7 @@
       "name": "Feeding Bottle - 150ml",
       "category": "Feeding",
       "price": 299,
-      "image": "/images/feedingbottle.jpg",
+      "image": "https://rukminim2.flixcart.com/image/612/612/jwcf9u80/baby-bottle/y/z/b/ease-polypropylene-wide-mouth-feeding-bottle-150ml-5oz-bb-w-e502-original-imafhfvu3mzmkv3p.jpeg?q=70",
       "description": "Anti-colic BPA-free feeding bottle.",
       "stock": "40",
       "reviews": []
@@ -63,7 +63,7 @@
       "name": "Diaper Pack - Medium (24 pcs)",
       "category": "Diapering",
       "price": 549,
-      "image": "/images/diaperset.jpg",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/diaper/i/3/i/xl-pants-diaper-extra-large-24-24-mamypoko-original-imagqp6eja46uhay.jpeg?q=70",
       "description": "Super-absorbent leak-proof diapers for newborns.",
       "stock": "50",
       "reviews": [
@@ -81,7 +81,7 @@
       "name": "Changing Mat - Waterproof",
       "category": "Diapering",
       "price": 349,
-      "image": "/images/changingmate.jpg",
+      "image": "https://cdn.fcglcdn.com/brainbees/images/products/583x720/9543095a.webp",
       "description": "Soft, foldable mat ideal for travel and home use.",
       "stock": "22",
       "reviews": []
@@ -91,7 +91,7 @@
       "name": "Soft Plush Elephant Toy",
       "category": "Toys",
       "price": 399,
-      "image": "/images/Soft Plush Elephant Toy.jpg",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/stuffed-toy/f/i/a/cute-elephant-dress-soft-toy-for-kids-special-gift-for-birthday-original-imah4zg7h7fgdxke.jpeg?q=70",
       "description": "Cuddly and safe soft toy for newborns.",
       "stock": "18",
       "reviews": []
@@ -121,7 +121,7 @@
       "name": "Swaddle Blanket - Pack of 2",
       "category": "Bedding",
       "price": 449,
-      "image": "/images/Swaddle Blanket.jpg",
+      "image": "https://images.unsplash.com/photo-1610901137736-d7cc46657b11?q=80&w=2035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Breathable muslin swaddles in pastel colors.",
       "stock": "30",
       "reviews": []
@@ -131,7 +131,7 @@
       "name": "Baby Carrier - Front Facing",
       "category": "Travel",
       "price": 1299,
-      "image": "/images/babycarrier.jpg",
+      "image": "https://images.pexels.com/photos/6849342/pexels-photo-6849342.jpeg",
       "description": "Ergonomic baby carrier for front and back carry.",
       "stock": "10",
       "reviews": []
@@ -141,7 +141,7 @@
       "name": "Stroller - Lightweight Foldable",
       "category": "Travel",
       "price": 2499,
-      "image": "/images/stroller.jpg",
+      "image": "https://images.pexels.com/photos/31387171/pexels-photo-31387171.jpeg",
       "description": "Portable stroller with 3-position recline.",
       "stock": "8",
       "reviews": []
@@ -150,7 +150,7 @@
       "id": "16",
       "name": "Baby Bottle",
       "price": 199,
-      "image": "/images/feedingbottle.jpg",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/baby-bottle/z/n/x/baby-feeding-bottle-bpa-free-anti-colic-plastic-free-baby-original-imahb2k7pphq375f.jpeg?q=70",
       "category": "Feeding",
       "description": "Soft bottles for your little one",
       "stock": "200",
@@ -175,6 +175,186 @@
       "description": "Comfy and soft clothing ..",
       "stock": "12",
       "reviews": []
+    },
+    {
+      "id": "fc37",
+      "name": "Romper boys",
+      "price": "439",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/kids-dungaree-romper/c/w/n/0-3-months-gobs20-2474-beige-babygo-original-imahfykzjdpptzun.jpeg?q=70",
+      "category": "Clothing",
+      "description": "Romper For Baby Boys Casual Solid Pure Cotton  (Beige, Pack of 2)",
+      "stock": "9"
+    },
+    {
+      "id": "7b83",
+      "name": "Romper girls",
+      "price": "348",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/kids-dungaree-romper/g/g/k/0-3-months-gobs20-1772-pink-babygo-original-imahdug4uphkw8vb.jpeg?q=70",
+      "category": "Clothing",
+      "description": "Romper For Baby Girls Casual Embroidered Pure Cotton  (White, Pack of 1)\n",
+      "stock": "15"
+    },
+    {
+      "id": "12a6",
+      "name": "T-shirt",
+      "price": "304",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/kids-apparel-combo/y/w/i/0-3-months-ch1373-la-petite-original-imagu7hrgq4gzanh.jpeg?q=70",
+      "category": "Clothing",
+      "description": "Baby Boys & Baby Girls Casual T-shirt Pant  (Pink)",
+      "stock": "9"
+    },
+    {
+      "id": "bcc2",
+      "name": "Dress",
+      "price": "299",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/kids-apparel-combo/h/y/1/0-3-months-cotton-baby-blossom-original-imahbsy3szqjztfv.jpeg?q=70",
+      "category": "Clothing",
+      "description": "Boys & Girls Casual Dress Dress  (Color varies as per Avaliblity)",
+      "stock": "12"
+    },
+    {
+      "id": "93d0",
+      "name": "Dabur Lal Tail  (1500 ml)",
+      "price": "597",
+      "image": "https://rukminim2.flixcart.com/image/612/612/kokdci80/massage-oil/c/a/p/1500-lal-tail-buy-2-get-1-free-8901207006944-dabur-original-imag2zbaabdhpbxz.jpeg?q=70",
+      "category": "Baby Care",
+      "description": "\nIdeal for all skin types.Many proven benefits. Unscented",
+      "stock": "10"
+    },
+    {
+      "id": "c83a",
+      "name": "HIMALAYA Baby Powder 400 & 700  (2 x 550 g)",
+      "price": "409",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/baby-care-combo/p/y/q/baby-powder-400-700-2-bgp01-himalaya-original-imagyq3ny4pzhmt7.jpeg?q=70",
+      "category": "Baby Care",
+      "description": "\nHimalayas Baby Powder is formulated with herbal ingredients which helps keeps babys skin cool and comfortable.",
+      "stock": "20"
+    },
+    {
+      "id": "d934",
+      "name": "MeeMee wet wipes  (3 Wipes)",
+      "price": "199",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/wipe/p/d/u/soft-cleansing-baby-wet-with-lid-aloe-vera-pack-of-3-216-wet-original-imahbj7zpzmvxqt5.jpeg?q=70",
+      "category": "Baby Care",
+      "description": "Mee Mee Premium Wet Wipes Caring Baby Wet Wipes are a Handy Way to keep your Baby Refreshed and Clean easily.",
+      "stock": "97"
+    },
+    {
+      "id": "b484",
+      "name": "JOHNSON'S Baby Oil with Vitamin E  (200 ml)",
+      "price": "249",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/massage-oil/r/z/e/-original-imah32h3yrzqspfc.jpeg?q=70",
+      "category": "Baby Care",
+      "description": "Johnson's Baby oil for massage is enriched with Vitamin E. Johnson's baby oil is formulated to spread easily on new born baby skin.",
+      "stock": "20"
+    },
+    {
+      "id": "8c39",
+      "name": "Feeding Bottle Toddler Silicone Squeeze Feeding Spoon ",
+      "price": "402",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/feeding-utensil/m/9/5/90ml-newborn-baby-feeding-bottle-toddler-silicone-squeeze-original-imahytea23pyenh6.jpeg?q=70",
+      "category": "Feeding",
+      "description": "Kidsify 90ML Newborn Baby Feeding Bottle Toddler Silicone Squeeze Feeding Spoon Milk Cereal Training Feeder and Fruit feeder(Set of 2) - Silicone  (Blue)",
+      "stock": "200"
+    },
+    {
+      "id": "6249",
+      "name": "Feeding Bottle Toddler Safe Silicone Squeeze",
+      "price": "400",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/feeding-utensil/b/a/f/new-born-baby-feeding-bottle-toddler-safe-silicone-squeeze-original-imahb5sgyhjzwfwc.jpeg?q=70",
+      "category": "Feeding",
+      "description": "RB Point New-born Baby Feeding Bottle Toddler Safe Silicone Squeeze Feeding - Food Grade Plastic, Silicone  (Multicolor04)",
+      "stock": "200"
+    },
+    {
+      "id": "e55b",
+      "name": "Feeding Bottle With Handle",
+      "price": "297",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/baby-bottle/x/s/t/glass-feeding-bottle-with-handle-baby-milk-feeding-bottle-with-original-imagwnky56znbu9b.jpeg?q=70",
+      "category": "Feeding",
+      "description": "ebuy Glass Feeding Bottle With Handle. Baby Milk Feeding Bottle With Silicone Teat. - 150 ml  (Come In Random Color)",
+      "stock": "100"
+    },
+    {
+      "id": "1c0b",
+      "name": "Jr. Sr. Baby Diaper Pants with Advanced Leak Protection | Soft & Comfortable | Pack of 1 - M  (72 Pieces)",
+      "price": "459",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/shopsy-diaper/8/y/m/baby-diaper-medium-7-12-kg-72-counts-pack-of-1-m-72-jr-sr-original-imah5yrfgeurwfwq.jpeg?q=70",
+      "category": "Diapering",
+      "description": "\nElevate your baby's comfort and care with Junior-Senior Baby Diapers. Our diapers offer a soft, secure, and comfy fit that's clinically proven hypoallergenic, ensuring sensitive skin stays irritation-free. With advanced leak protection and a convenient wetness indicator, you can confidently keep your baby dry and comfortable. Say goodbye to rashes thanks to our anti-rash technology, and let your baby's skin breathe freely with our breathable design. ",
+      "stock": "100"
+    },
+    {
+      "id": "ed54",
+      "name": "Huggies Complete Comfort Wonder Pants, India's Fastest Absorbing Diaper | - New Born  (24 Pieces)",
+      "price": "149",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/diaper/n/4/n/-original-imahdfet2ah8rhyj.jpeg?q=70",
+      "category": "Diapering",
+      "description": "Introducing the New and Improved Huggies Complete Comfort Wonder Pants - India's Fastest Absorbing Diaper. Designed to provide maximum comfort and absorbency for your little one, these are our best ever diaper pants. With our patented Dry Xpert technology that spreads urine evenly across the diaper - these diaper pants are now up to 4x Faster in absorbing urine, ensuring your baby stays dry and comfortable.",
+      "stock": "28"
+    },
+    {
+      "id": "1677",
+      "name": "Cuddles - Super Pants Combo Pack - XL (54*2) - XL  (108 Pieces)",
+      "price": "899",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/diaper/q/t/4/-original-imahcrg9vrg3u93h.jpeg?q=70",
+      "category": "Diapering",
+      "description": "\nKey Features Quick Max Absorption technology to provide quick absorption and lonf lasting dryness. The Diaper pants that provide Super Comfort, Super Dryness and Super Protection to the baby. Zig-Zag Channels Middle Layer - It provides a large absorbing area and facilitates uniform liquid distribution and thereby, uniform absorption",
+      "stock": "200"
+    },
+    {
+      "id": "ebad",
+      "name": "ARIZON DIY Plastic Building Blocks for Kids 100+ pcs  (Multicolor)",
+      "price": "193",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/block-construction/p/k/x/diy-plastic-building-blocks-for-kids-100-pcs-joy-baby-toys-original-imahde4jnwtsfyhg.jpeg?q=70",
+      "category": "Toys",
+      "description": "\nLittle kids love things bright and colorful. They are easily attracted to them. Colorful Learning Blocks set to make your little one playtime educational yet fun. High Quality Building Blocks, Security, Environmental Protection, No Burr, Slick Not To Injury. A Bag Building Blocks for Kids comes in a zippered packet with a handle, which makes it very convenient to store the blocks and carry them from one place to another ",
+      "stock": "99"
+    },
+    {
+      "id": "9911",
+      "name": "Safari Swing Car Rideon for kids(pink)",
+      "price": "2473",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/electric-ride-on/5/e/u/-original-imah2hscznvcuzvn.jpeg?q=70",
+      "category": "Toys",
+      "description": "Miss & Chief Voyager-Safari Swing Car Rideon for kids, Magic car for Boys & Girls Rideons & Wagons Non Battery Operated Ride On  (Pink)",
+      "stock": "20"
+    },
+    {
+      "id": "1f81",
+      "name": "Karovi Fashion 3 in 1 Baby Bed, Baby Bedding for New Born & Carry Nest, Cotton Sleeping Bag standard Cute Digital Print  (Fabric, Blue)",
+      "price": "404",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/baby-bed/i/k/a/3-in-1-baby-bed-baby-bedding-for-new-born-carry-nest-cotton-original-imahckshjf2grnut.jpeg?q=70",
+      "category": "Bedding",
+      "description": "\nMost comfortable for your baby: This baby sleeping bag ensures a hug of comfort to your baby so that the baby is reassured & keeps them in tight fit and thus they can be tucked into the bed or in your car seat easily. Grows with your baby with the help of the zipper. In winter and AC environment the zipper can be closed and the bedding acts as a hooded quilt, whereas in case of warm weather it can be used as a mattress",
+      "stock": "100"
+    },
+    {
+      "id": "b4eb",
+      "name": "BRANDONN Cotton Baby Bed Sized Bedding Set ",
+      "price": "476",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/bath-towel/8/a/w/hooded-baby-bath-towel-for-new-born-baby-boy-and-baby-girl-1-28-original-imagmxhquh37hjgf.jpeg?q=70",
+      "category": "Bedding",
+      "description": "Since a newborn's skin is so delicate, our blanket is made of cotton. It has a magical unicorn pattern on it. The baby can see what's going on around them, and you can make sure they are comfortable and secure thanks to the opening in the front of the blanket. The blanket is great for use in air-conditioned spaces since it surrounds the baby and blocks cold air. Your infant will like the hood as both a plaything and a companion. It’s a perfect gift for a baby as well as for an expectant mother.",
+      "stock": "25"
+    },
+    {
+      "id": "b71f",
+      "name": "Little curious Small Baby Diaper Bag",
+      "price": "1447",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/diaper-bag/h/i/y/small-baby-diaper-bag-convertible-handbag-backpack-tote-sling-original-imahdpw4pypne8rv.jpeg?q=70",
+      "category": "Travel",
+      "description": "Convertible Baby Diaper Bag for Mothers: This mini baby bag offers versatile carrying options, including backpack, tote, handbag, sling, and crossbody styles. It’s perfect for moms during travel, daily errands, or outdoor activities. Multi-Pocket Baby Travel Bag for Moms: Features 6 inside pockets (1 main compartment, 1 gadget pocket, 2 side bottle pockets, 2 elasticized pockets) and 5 outside pockets (1 front zip pocket, 2 insulated bottle pockets, 1 elasticized side bottle pocket, and 1 side zip pocket for wipes). This diaper bag for mothers ensures organized storage for all essentials. Premium Quality Baby Bag for Travel: Made from durable, water-resistant Oxford fabric, this baby diaper bag combines practicality with style. The wide structure offers easy access to baby essentials like diapers, wipes, bottles, and more. Compact & Lightweight Baby Bag for Clothes: Measuring 29 cm x 25 cm x 15 cm, this lightweight mother bag for baby is ideal for travel, walks, or shopping. A thoughtful and practical gift for moms and newborns. Space-Savvy Diaper Bag for Mommy: With a compact design and multiple compartments, this lightweight (400g), waterproof baby care kit bag offers ample storage without bulk, making it an organized solution for diaper changes on the go.\n",
+      "stock": "45"
+    },
+    {
+      "id": "c16c",
+      "name": "smilykid New Born Pocket Size Baby Nail Care set having 1 nail cutter, nail scissors, cl",
+      "price": "398",
+      "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/nail-clipper-cutter/m/v/9/new-born-pocket-size-baby-nail-care-set-having-1-nail-cutter-original-imah8hbchfdykyur.jpeg?q=70",
+      "category": "Travel",
+      "description": "smilykid New Born Pocket Size Baby Nail Care set having 1 nail cutter, nail scissors, cl\n",
+      "stock": "47"
     }
   ],
   "users": [
@@ -183,7 +363,7 @@
       "email": "admin@babenest.com",
       "password": "admin@123",
       "role": "admin",
-      "isBlocked": false,
+      "blocked": false,
       "createdAt": "2025-07-11T10:00:00.000Z",
       "cart": [],
       "orders": [],
@@ -203,58 +383,24 @@
     {
       "id": "12f3",
       "name": "h",
-      "email": "h@gmail.com2",
+      "email": "h@gmail.com",
       "password": "23",
       "cart": [],
       "wishlist": [],
       "orders": [],
-      "isBlocked": false,
       "role": "user",
       "blocked": true,
       "createdAt": "2025-07-11T10:00:00.000Z"
     },
     {
       "id": "84f8",
-      "name": "a",
+      "name": "abhii",
       "email": "a@gmail.com",
-      "password": "123",
-      "isBlocked": false,
+      "password": "a@gmail.com",
       "role": "user",
+      "blocked": false,
       "createdAt": "2025-07-11T10:00:00.000Z",
       "cart": [
-        {
-          "id": "3",
-          "name": "Diaper Rash Cream - 50g",
-          "category": "Baby Care",
-          "price": 199,
-          "rating": "4.7",
-          "image": "/images/rashcream.avif",
-          "description": "Protects and heals baby skin from rashes.",
-          "stock": "30",
-          "quantity": 1
-        },
-        {
-          "id": "11",
-          "name": "Baby Mattress Set - Stars Design",
-          "category": "Bedding",
-          "price": 799,
-          "rating": "4.6",
-          "image": "/images/Baby Mattress Set.avif",
-          "description": "Comfortable mattress with mosquito net for newborns.",
-          "stock": "12",
-          "quantity": 1
-        },
-        {
-          "id": "17",
-          "name": "Baby Toy",
-          "price": 599,
-          "image": "/images/toys.avif",
-          "category": "Toys",
-          "description": "Small soft and fluffy Toy for your newborn ",
-          "stock": "400",
-          "rating": "4.5",
-          "quantity": 1
-        },
         {
           "id": "14",
           "name": "Stroller - Lightweight Foldable",
@@ -265,6 +411,27 @@
           "description": "Portable stroller with 3-position recline.",
           "stock": "8",
           "quantity": 2
+        },
+        {
+          "id": "5",
+          "name": "Feeding Bottle - 150ml",
+          "category": "Feeding",
+          "price": 299,
+          "image": "/images/feedingbottle.jpg",
+          "description": "Anti-colic BPA-free feeding bottle.",
+          "stock": "40",
+          "reviews": [],
+          "quantity": 5
+        },
+        {
+          "id": "7b83",
+          "name": "Romper girls",
+          "price": "348",
+          "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/kids-dungaree-romper/g/g/k/0-3-months-gobs20-1772-pink-babygo-original-imahdug4uphkw8vb.jpeg?q=70",
+          "category": "Clothing",
+          "description": "Romper For Baby Girls Casual Embroidered Pure Cotton  (White, Pack of 1)\n",
+          "stock": "15",
+          "quantity": 1
         },
         {
           "id": "4",
@@ -284,6 +451,49 @@
           ],
           "rating": "3.5",
           "quantity": 3
+        },
+        {
+          "id": "3",
+          "name": "Diaper Rash Cream - 50g",
+          "category": "Baby Care",
+          "price": 199,
+          "image": "/images/rashcream.avif",
+          "description": "Protects and heals baby skin from rashes.",
+          "stock": "30",
+          "reviews": [],
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Newborn Romper - Animal Print",
+          "category": "Clothing",
+          "price": "399",
+          "image": "https://images.unsplash.com/photo-1672863279585-f50438c73b62?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "description": "Cute animal printed romper for daily comfort..",
+          "stock": "20",
+          "reviews": [],
+          "quantity": 1
+        },
+        {
+          "id": "16",
+          "name": "Baby Bottle",
+          "price": 199,
+          "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/baby-bottle/z/n/x/baby-feeding-bottle-bpa-free-anti-colic-plastic-free-baby-original-imahb2k7pphq375f.jpeg?q=70",
+          "category": "Feeding",
+          "description": "Soft bottles for your little one",
+          "stock": "200",
+          "reviews": [],
+          "quantity": 1
+        },
+        {
+          "id": "b4eb",
+          "name": "BRANDONN Cotton Baby Bed Sized Bedding Set ",
+          "price": "476",
+          "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/bath-towel/8/a/w/hooded-baby-bath-towel-for-new-born-baby-boy-and-baby-girl-1-28-original-imagmxhquh37hjgf.jpeg?q=70",
+          "category": "Bedding",
+          "description": "Since a newborn's skin is so delicate, our blanket is made of cotton. It has a magical unicorn pattern on it. The baby can see what's going on around them, and you can make sure they are comfortable and secure thanks to the opening in the front of the blanket. The blanket is great for use in air-conditioned spaces since it surrounds the baby and blocks cold air. Your infant will like the hood as both a plaything and a companion. It’s a perfect gift for a baby as well as for an expectant mother.",
+          "stock": "25",
+          "quantity": 2
         }
       ],
       "wishlist": [
@@ -296,16 +506,6 @@
           "image": "/images/babeshampoo.avif",
           "description": "Tear-free formula made with gentle ingredients.",
           "stock": "25"
-        },
-        {
-          "id": "3",
-          "name": "Diaper Rash Cream - 50g",
-          "category": "Baby Care",
-          "price": 199,
-          "rating": "4.7",
-          "image": "/images/rashcream.avif",
-          "description": "Protects and heals baby skin from rashes.",
-          "stock": "30"
         },
         {
           "id": "5",
@@ -326,6 +526,35 @@
           "image": "/images/feeding3.jpg",
           "description": "Waterproof bib with food catcher pocket.",
           "stock": "35"
+        },
+        {
+          "id": "16",
+          "name": "Baby Bottle",
+          "price": 199,
+          "image": "/images/feedingbottle.jpg",
+          "category": "Feeding",
+          "description": "Soft bottles for your little one",
+          "stock": "200",
+          "reviews": []
+        },
+        {
+          "id": "3",
+          "name": "Diaper Rash Cream - 50g",
+          "category": "Baby Care",
+          "price": 199,
+          "image": "/images/rashcream.avif",
+          "description": "Protects and heals baby skin from rashes.",
+          "stock": "30",
+          "reviews": []
+        },
+        {
+          "id": "bcc2",
+          "name": "Dress",
+          "price": "299",
+          "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/kids-apparel-combo/h/y/1/0-3-months-cotton-baby-blossom-original-imahbsy3szqjztfv.jpeg?q=70",
+          "category": "Clothing",
+          "description": "Boys & Girls Casual Dress Dress  (Color varies as per Avaliblity)",
+          "stock": "12"
         }
       ],
       "orders": [
@@ -361,7 +590,7 @@
           ],
           "totalAmount": 698,
           "orderDate": "2025-07-07T09:07:47.412Z",
-          "status": "shipped"
+          "status": "delivered"
         },
         {
           "orderId": "ORD-1751947242373-8298",
@@ -418,7 +647,7 @@
           ],
           "totalAmount": 798,
           "orderDate": "2025-07-08T04:51:02.401Z",
-          "status": "pending"
+          "status": "delivered"
         }
       ]
     },
@@ -427,7 +656,7 @@
       "name": "s",
       "email": "s@gmail.com",
       "password": "123",
-      "isBlocked": false,
+      "blocked": false,
       "role": "user",
       "createdAt": "2025-07-11T10:00:00.000Z"
     },
@@ -436,7 +665,6 @@
       "name": "ssss",
       "email": "s@gmail.com",
       "password": "12345678",
-      "isBlocked": false,
       "role": "user",
       "blocked": false,
       "createdAt": "2025-07-11T10:00:00.000Z"
@@ -446,7 +674,7 @@
       "name": "hamid",
       "email": "hamid@gmail.com",
       "password": "hamid12345",
-      "isBlocked": false,
+      "blocked": false,
       "createdAt": "2025-07-11T10:00:00.000Z",
       "cart": [
         {
@@ -516,7 +744,7 @@
           ],
           "totalAmount": 797,
           "orderDate": "2025-07-08T09:11:33.452Z",
-          "status": "pending"
+          "status": "delivered"
         },
         {
           "orderId": "ORD-1751969303193-9047",
@@ -539,7 +767,7 @@
           ],
           "totalAmount": 599,
           "orderDate": "2025-07-08T10:08:23.193Z",
-          "status": "shipped"
+          "status": "delivered"
         }
       ],
       "wishlist": [
@@ -562,6 +790,32 @@
           "image": "/images/feeding3.jpg",
           "description": "Waterproof bib with food catcher pocket.",
           "stock": "35"
+        }
+      ]
+    },
+    {
+      "id": "3604",
+      "name": "adnan",
+      "email": "adnan@gmail.com",
+      "password": "adnan@gmail.com",
+      "wishlist": [
+        {
+          "id": "4",
+          "name": "Baby Shampoo - 200ml",
+          "category": "Baby Care",
+          "price": 249,
+          "image": "/images/babeshampoo.avif",
+          "description": "Tear-free formula made with gentle ingredients.",
+          "stock": "25",
+          "reviews": [
+            {
+              "userName": "a",
+              "rating": 4,
+              "review": "very nice shampoo...100% suitable for the babies",
+              "date": "2025-07-11T09:18:33.697Z"
+            }
+          ],
+          "rating": "3.5"
         }
       ]
     }

@@ -81,7 +81,7 @@ function Cart() {
     <>
     <Navbar></Navbar>
     <div className="max-w-4xl mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
+      <h1 className="text-3xl font-bold mb-6 text-pink-600">My Cart</h1>
       <div className="space-y-4">
         {cartItems.map(item => (
           <div key={item.id} className="flex items-center gap-4 border rounded p-4">
