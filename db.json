@@ -110,7 +110,7 @@
       "id": "11",
       "name": "Baby Mattress Set - Stars Design",
       "category": "Bedding",
-      "price": 799,
+      "price": "790",
       "image": "/images/Baby Mattress Set.avif",
       "description": "Comfortable mattress with mosquito net for newborns.",
       "stock": "12",
@@ -350,7 +350,7 @@
     {
       "id": "c16c",
       "name": "smilykid New Born Pocket Size Baby Nail Care set having 1 nail cutter, nail scissors, cl",
-      "price": "398",
+      "price": "377",
       "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/nail-clipper-cutter/m/v/9/new-born-pocket-size-baby-nail-care-set-having-1-nail-cutter-original-imah8hbchfdykyur.jpeg?q=70",
       "category": "Travel",
       "description": "smilykid New Born Pocket Size Baby Nail Care set having 1 nail cutter, nail scissors, cl\n",
@@ -398,125 +398,10 @@
       "email": "a@gmail.com",
       "password": "a@gmail.com",
       "role": "user",
-      "blocked": false,
+      "blocked": true,
       "createdAt": "2025-07-11T10:00:00.000Z",
-      "cart": [
-        {
-          "id": "14",
-          "name": "Stroller - Lightweight Foldable",
-          "category": "Travel",
-          "price": 2499,
-          "rating": "4.7",
-          "image": "/images/stroller.jpg",
-          "description": "Portable stroller with 3-position recline.",
-          "stock": "8",
-          "quantity": 2
-        },
-        {
-          "id": "5",
-          "name": "Feeding Bottle - 150ml",
-          "category": "Feeding",
-          "price": 299,
-          "image": "/images/feedingbottle.jpg",
-          "description": "Anti-colic BPA-free feeding bottle.",
-          "stock": "40",
-          "reviews": [],
-          "quantity": 5
-        },
-        {
-          "id": "7b83",
-          "name": "Romper girls",
-          "price": "348",
-          "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/kids-dungaree-romper/g/g/k/0-3-months-gobs20-1772-pink-babygo-original-imahdug4uphkw8vb.jpeg?q=70",
-          "category": "Clothing",
-          "description": "Romper For Baby Girls Casual Embroidered Pure Cotton  (White, Pack of 1)\n",
-          "stock": "15",
-          "quantity": 1
-        },
-        {
-          "id": "4",
-          "name": "Baby Shampoo - 200ml",
-          "category": "Baby Care",
-          "price": 249,
-          "image": "/images/babeshampoo.avif",
-          "description": "Tear-free formula made with gentle ingredients.",
-          "stock": "25",
-          "reviews": [
-            {
-              "userName": "a",
-              "rating": 4,
-              "review": "very nice shampoo...100% suitable for the babies",
-              "date": "2025-07-11T09:18:33.697Z"
-            }
-          ],
-          "rating": "3.5",
-          "quantity": 3
-        },
-        {
-          "id": "3",
-          "name": "Diaper Rash Cream - 50g",
-          "category": "Baby Care",
-          "price": 199,
-          "image": "/images/rashcream.avif",
-          "description": "Protects and heals baby skin from rashes.",
-          "stock": "30",
-          "reviews": [],
-          "quantity": 1
-        },
-        {
-          "id": "2",
-          "name": "Newborn Romper - Animal Print",
-          "category": "Clothing",
-          "price": "399",
-          "image": "https://images.unsplash.com/photo-1672863279585-f50438c73b62?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "description": "Cute animal printed romper for daily comfort..",
-          "stock": "20",
-          "reviews": [],
-          "quantity": 1
-        },
-        {
-          "id": "16",
-          "name": "Baby Bottle",
-          "price": 199,
-          "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/baby-bottle/z/n/x/baby-feeding-bottle-bpa-free-anti-colic-plastic-free-baby-original-imahb2k7pphq375f.jpeg?q=70",
-          "category": "Feeding",
-          "description": "Soft bottles for your little one",
-          "stock": "200",
-          "reviews": [],
-          "quantity": 1
-        },
-        {
-          "id": "b4eb",
-          "name": "BRANDONN Cotton Baby Bed Sized Bedding Set ",
-          "price": "476",
-          "image": "https://rukminim2.flixcart.com/image/612/612/xif0q/bath-towel/8/a/w/hooded-baby-bath-towel-for-new-born-baby-boy-and-baby-girl-1-28-original-imagmxhquh37hjgf.jpeg?q=70",
-          "category": "Bedding",
-          "description": "Since a newborn's skin is so delicate, our blanket is made of cotton. It has a magical unicorn pattern on it. The baby can see what's going on around them, and you can make sure they are comfortable and secure thanks to the opening in the front of the blanket. The blanket is great for use in air-conditioned spaces since it surrounds the baby and blocks cold air. Your infant will like the hood as both a plaything and a companion. It’s a perfect gift for a baby as well as for an expectant mother.",
-          "stock": "25",
-          "quantity": 2
-        }
-      ],
+      "cart": [],
       "wishlist": [
-        {
-          "id": "4",
-          "name": "Baby Shampoo - 200ml",
-          "category": "Baby Care",
-          "price": 249,
-          "rating": "4.3",
-          "image": "/images/babeshampoo.avif",
-          "description": "Tear-free formula made with gentle ingredients.",
-          "stock": "25"
-        },
-        {
-          "id": "5",
-          "name": "Feeding Bottle - 150ml",
-          "category": "Feeding",
-          "price": 299,
-          "rating": "4.4",
-          "image": "/images/feedingbottle.jpg",
-          "description": "Anti-colic BPA-free feeding bottle.",
-          "stock": "40"
-        },
         {
           "id": "6",
           "name": "Silicone Bib - Pink",
@@ -555,6 +440,24 @@
           "category": "Clothing",
           "description": "Boys & Girls Casual Dress Dress  (Color varies as per Avaliblity)",
           "stock": "12"
+        },
+        {
+          "id": "4",
+          "name": "Baby Shampoo - 200ml",
+          "category": "Baby Care",
+          "price": 249,
+          "image": "/images/babeshampoo.avif",
+          "description": "Tear-free formula made with gentle ingredients.",
+          "stock": "25",
+          "reviews": [
+            {
+              "userName": "a",
+              "rating": 4,
+              "review": "very nice shampoo...100% suitable for the babies",
+              "date": "2025-07-11T09:18:33.697Z"
+            }
+          ],
+          "rating": "3.5"
         }
       ],
       "orders": [
@@ -648,6 +551,106 @@
           "totalAmount": 798,
           "orderDate": "2025-07-08T04:51:02.401Z",
           "status": "delivered"
+        },
+        {
+          "orderId": "ORD-1752552307953-8977",
+          "customerName": "ahmed",
+          "customerEmail": "ahmed@gmail.com",
+          "customerPhone": "2345678900",
+          "customerAddress": "kuttaloor vengara town",
+          "items": [
+            {
+              "id": "4",
+              "name": "Baby Shampoo - 200ml",
+              "category": "Baby Care",
+              "price": 249,
+              "image": "/images/babeshampoo.avif",
+              "description": "Tear-free formula made with gentle ingredients.",
+              "stock": "25",
+              "reviews": [
+                {
+                  "userName": "a",
+                  "rating": 4,
+                  "review": "very nice shampoo...100% suitable for the babies",
+                  "date": "2025-07-11T09:18:33.697Z"
+                }
+              ],
+              "rating": "3.5",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 249,
+          "orderDate": "2025-07-15T04:05:07.953Z",
+          "status": "delivered"
+        },
+        {
+          "orderId": "ORD-1752553339248-7330",
+          "customerName": "ahmed",
+          "customerEmail": "ahmed@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "ahmed house, vengra",
+          "items": [
+            {
+              "id": "3",
+              "name": "Diaper Rash Cream - 50g",
+              "category": "Baby Care",
+              "price": 199,
+              "image": "/images/rashcream.avif",
+              "description": "Protects and heals baby skin from rashes.",
+              "stock": "30",
+              "reviews": [],
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 199,
+          "status": "cancelled",
+          "orderDate": "2025-07-15T04:22:19.248Z"
+        },
+        {
+          "orderId": "ORD-1752566365822-2317",
+          "customerName": "haaam",
+          "customerEmail": "a@gmail.com",
+          "customerPhone": "7765342345",
+          "customerAddress": "kakkachery calicut",
+          "items": [
+            {
+              "id": "5",
+              "name": "Feeding Bottle - 150ml",
+              "category": "Feeding",
+              "price": 299,
+              "image": "https://rukminim2.flixcart.com/image/612/612/jwcf9u80/baby-bottle/y/z/b/ease-polypropylene-wide-mouth-feeding-bottle-150ml-5oz-bb-w-e502-original-imafhfvu3mzmkv3p.jpeg?q=70",
+              "description": "Anti-colic BPA-free feeding bottle.",
+              "stock": "40",
+              "reviews": [],
+              "quantity": 2
+            }
+          ],
+          "totalAmount": 598,
+          "status": "cancelled",
+          "orderDate": "2025-07-15T07:59:25.822Z"
+        },
+        {
+          "orderId": "ORD-1752573124581-5089",
+          "customerName": "kadeeja",
+          "customerEmail": "a@gmail.com",
+          "customerPhone": "7854321899",
+          "customerAddress": "kakkachery ,calicut.",
+          "items": [
+            {
+              "id": "5",
+              "name": "Feeding Bottle - 150ml",
+              "category": "Feeding",
+              "price": 299,
+              "image": "https://rukminim2.flixcart.com/image/612/612/jwcf9u80/baby-bottle/y/z/b/ease-polypropylene-wide-mouth-feeding-bottle-150ml-5oz-bb-w-e502-original-imafhfvu3mzmkv3p.jpeg?q=70",
+              "description": "Anti-colic BPA-free feeding bottle.",
+              "stock": "40",
+              "reviews": [],
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 299,
+          "status": "pending",
+          "orderDate": "2025-07-15T09:52:04.581Z"
         }
       ]
     },
@@ -676,41 +679,7 @@
       "password": "hamid12345",
       "blocked": false,
       "createdAt": "2025-07-11T10:00:00.000Z",
-      "cart": [
-        {
-          "id": "6",
-          "name": "Silicone Bib - Pink",
-          "category": "Feeding",
-          "price": 199,
-          "rating": "4.6",
-          "image": "/images/feeding3.jpg",
-          "description": "Waterproof bib with food catcher pocket.",
-          "stock": "35",
-          "quantity": 4
-        },
-        {
-          "id": "5",
-          "name": "Feeding Bottle - 150ml",
-          "category": "Feeding",
-          "price": 299,
-          "rating": "4.4",
-          "image": "/images/feedingbottle.jpg",
-          "description": "Anti-colic BPA-free feeding bottle.",
-          "stock": "40",
-          "quantity": 2
-        },
-        {
-          "id": "16",
-          "name": "Baby Bottle",
-          "price": 199,
-          "image": "/images/feedingbottle.jpg",
-          "category": "Feeding",
-          "description": "Soft bottles for your little one",
-          "stock": "200",
-          "rating": "4.5",
-          "quantity": 1
-        }
-      ],
+      "cart": [],
       "orders": [
         {
           "orderId": "ORD-1751965893452-928",
@@ -768,6 +737,50 @@
           "totalAmount": 599,
           "orderDate": "2025-07-08T10:08:23.193Z",
           "status": "delivered"
+        },
+        {
+          "orderId": "ORD-1752552813906-2697",
+          "customerName": "hanan",
+          "customerEmail": "hanan@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "hanan house ,sreet 4",
+          "items": [
+            {
+              "id": "6",
+              "name": "Silicone Bib - Pink",
+              "category": "Feeding",
+              "price": 199,
+              "rating": "4.6",
+              "image": "/images/feeding3.jpg",
+              "description": "Waterproof bib with food catcher pocket.",
+              "stock": "35",
+              "quantity": 4
+            },
+            {
+              "id": "5",
+              "name": "Feeding Bottle - 150ml",
+              "category": "Feeding",
+              "price": 299,
+              "rating": "4.4",
+              "image": "/images/feedingbottle.jpg",
+              "description": "Anti-colic BPA-free feeding bottle.",
+              "stock": "40",
+              "quantity": 2
+            },
+            {
+              "id": "16",
+              "name": "Baby Bottle",
+              "price": 199,
+              "image": "/images/feedingbottle.jpg",
+              "category": "Feeding",
+              "description": "Soft bottles for your little one",
+              "stock": "200",
+              "rating": "4.5",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 1593,
+          "orderDate": "2025-07-15T04:13:33.906Z"
         }
       ],
       "wishlist": [
@@ -800,22 +813,58 @@
       "password": "adnan@gmail.com",
       "wishlist": [
         {
-          "id": "4",
-          "name": "Baby Shampoo - 200ml",
-          "category": "Baby Care",
-          "price": 249,
-          "image": "/images/babeshampoo.avif",
-          "description": "Tear-free formula made with gentle ingredients.",
-          "stock": "25",
-          "reviews": [
+          "id": "2",
+          "name": "Newborn Romper - Animal Print",
+          "category": "Clothing",
+          "price": "399",
+          "image": "https://images.unsplash.com/photo-1672863279585-f50438c73b62?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "description": "Cute animal printed romper for daily comfort..",
+          "stock": "20",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "id": "3c37",
+      "name": "Ashfaque",
+      "email": "ashfaque@gmail.com",
+      "password": "ashfaque@gmail.com",
+      "cart": [],
+      "wishlist": [
+        {
+          "id": "2",
+          "name": "Newborn Romper - Animal Print",
+          "category": "Clothing",
+          "price": "399",
+          "image": "https://images.unsplash.com/photo-1672863279585-f50438c73b62?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "description": "Cute animal printed romper for daily comfort..",
+          "stock": "20",
+          "reviews": []
+        }
+      ],
+      "orders": [
+        {
+          "orderId": "ORD-1752576153170-6923",
+          "customerName": "shameela",
+          "customerEmail": "fathimashameela2004@gmail.com",
+          "customerPhone": "9645895733",
+          "customerAddress": "vengara ..",
+          "items": [
             {
-              "userName": "a",
-              "rating": 4,
-              "review": "very nice shampoo...100% suitable for the babies",
-              "date": "2025-07-11T09:18:33.697Z"
+              "id": "5",
+              "name": "Feeding Bottle - 150ml",
+              "category": "Feeding",
+              "price": 299,
+              "image": "https://rukminim2.flixcart.com/image/612/612/jwcf9u80/baby-bottle/y/z/b/ease-polypropylene-wide-mouth-feeding-bottle-150ml-5oz-bb-w-e502-original-imafhfvu3mzmkv3p.jpeg?q=70",
+              "description": "Anti-colic BPA-free feeding bottle.",
+              "stock": "40",
+              "reviews": [],
+              "quantity": 1
             }
           ],
-          "rating": "3.5"
+          "totalAmount": 299,
+          "status": "pending",
+          "orderDate": "2025-07-15T10:42:33.170Z"
         }
       ]
     }

@@ -25,7 +25,7 @@
 
 //   useEffect(() => {
 //     axios
-//       .get('http://localhost:3000/products')
+//       .get('http://localhost:3001/products')
 //       .then((res) => {
 //         setProducts(res.data)
 //         setFilteredProducts(res.data)
@@ -137,7 +137,7 @@ function ProductList() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/products')
+      .get('http://localhost:3001/products')
       .then((res) => {
         setProducts(res.data)
         setFilteredProducts(res.data)

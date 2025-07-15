@@ -1,7 +1,7 @@
 
 import axios from "axios";
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AuthContext = createContext();
@@ -10,6 +10,7 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true); 
+  const navigate=useNavigate()
   
   useEffect(() => {
     const storeddata = localStorage.getItem("user");
@@ -51,7 +52,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setUser(null);
     localStorage.removeItem("user");
-    <Navigate to="/" replace/>
+    navigate("/")
   };
   
 

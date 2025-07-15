@@ -7,6 +7,11 @@ function ManageProducts() {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const navigate = useNavigate();
+
+  const [searchTerm, setSearchTerm] = useState("");
+const [categoryFilter, setCategoryFilter] = useState("");
+const [currentPage, setCurrentPage] = useState(1);
+const itemsPerPage = 8;
   
 
   useEffect(() => {
@@ -39,11 +44,23 @@ function ManageProducts() {
     }
   });
 };
+const filteredProducts = products.filter(product => {
+  const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+  const matchesCategory = categoryFilter ? product.category === categoryFilter : true;
+  return matchesSearch && matchesCategory;
+});
+
+const paginatedProducts = filteredProducts.slice(
+  (currentPage - 1) * itemsPerPage,
+  currentPage * itemsPerPage
+);
+
 
   return (
     <div className="p-6">
       <div className="flex justify-between items-center mb-6">
       <h1 className="text-3xl font-bold mb-6 text-pink-600">Manage Products</h1>
+
         <button
           onClick={() => navigate('/admin/products/add')}
           className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
@@ -51,6 +68,38 @@ function ManageProducts() {
           Add New Product
         </button>
       </div>
+
+
+
+
+
+      <div className="mb-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+  <input
+    type="text"
+    placeholder="Search by name"
+    value={searchTerm}
+    onChange={(e) => {
+      setSearchTerm(e.target.value);
+      setCurrentPage(1);
+    }}
+    className="border px-3 py-2 rounded-md"
+  />
+
+  <select
+    value={categoryFilter}
+    onChange={(e) => {
+      setCategoryFilter(e.target.value);
+      setCurrentPage(1);
+    }}
+    className="border px-3 py-2 rounded-md"
+  >
+    <option value="">All Categories</option>
+    {[...new Set(products.map(p => p.category))].map(cat => (
+      <option key={cat} value={cat}>{cat}</option>
+    ))}
+  </select>
+</div>
+
 
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
@@ -65,10 +114,10 @@ function ManageProducts() {
             </tr>
           </thead>
           <tbody>
-            {products.map((product) => (
+            {paginatedProducts.map((product) => (
               <tr
                 key={product.id}
-                className="border-t hover:bg-gray-50 cursor-pointer transition"
+                className="border-t hover:bg-pink-50 cursor-pointer transition"
                 onClick={() => setSelectedProduct(product)}
               >
                 <td className="p-4">
@@ -106,6 +155,28 @@ function ManageProducts() {
             ))}
           </tbody>
         </table>
+        <div className="flex justify-center mt-6 gap-4">
+  <button
+    disabled={currentPage === 1}
+    onClick={() => setCurrentPage(p => p - 1)}
+    className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50"
+  >
+    Prev
+  </button>
+
+  <span className="font-medium">
+    Page {currentPage} of {Math.ceil(filteredProducts.length / itemsPerPage)}
+  </span>
+
+  <button
+    disabled={currentPage === Math.ceil(filteredProducts.length / itemsPerPage)}
+    onClick={() => setCurrentPage(p => p + 1)}
+    className="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 disabled:opacity-50"
+  >
+    Next
+  </button>
+</div>
+
       </div>
 
       {/* Product Detail Modal */}

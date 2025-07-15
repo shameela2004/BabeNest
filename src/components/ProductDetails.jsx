@@ -175,7 +175,7 @@ function ProductDetails() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/products/${id}`)
+      .get(`http://localhost:3001/products/${id}`)
       .then((res) => setProduct(res.data))
       .catch((e) => console.log('error in fetching..', e));
   }, [id]);

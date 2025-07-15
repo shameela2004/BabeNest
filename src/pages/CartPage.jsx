@@ -63,9 +63,10 @@ import React from 'react';
 import { useCart } from '../context/CartProvider';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/common/Navbar';
+import { BiTrash } from 'react-icons/bi';
 
 function Cart() {
-  const { cartItems, removeFromCart, updateQuantity, totalPrice } = useCart();
+  const { cartItems, removeFromCart, updateQuantity, totalPrice ,clearCart} = useCart();
 
   if (cartItems.length === 0) {
     return <>
@@ -126,8 +127,9 @@ function Cart() {
         ))}
       </div>
 
-      <div className="mt-6 text-right text-xl font-semibold">
-        Total: ₹{totalPrice.toFixed(2)}
+      <div className="mt-6 text-right  font-semibold flex justify-between">
+        <div className='text-xl'>Total: ₹{totalPrice.toFixed(2)}</div>
+        <button className='flex text-white bg-gray-600 hover:bg-gray-800 p-2 rounded text-m text-light' onClick={clearCart}>🗑️ Clear Cart</button>
       </div>
 
       {/* <button

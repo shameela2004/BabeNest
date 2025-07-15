@@ -214,6 +214,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../context/AuthProvider';
 import Navbar from '../components/common/Navbar';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const OrderHistory = () => {
   const { user, login } = useAuth();
@@ -237,11 +238,11 @@ const [refresh, setRefresh] = useState(false);
         o.orderId === order.orderId ? { ...o, status: 'cancelled' } : o
       );
       await axios.put(`http://localhost:3001/users/${user.id}`, {...userData, orders: updated});
-      login({ ...user, orders: updated }); // refresh context
-      alert('Order cancelled.');
+      login({ ...user, orders: updated }); 
+      toast.success('Order cancelled.');
       setRefresh(r => !r);
     } catch (_) {
-      alert('Cancel failed.');
+      toast.error('Cancel failed.');
     }
   };
 const handleReviewSubmit = async (item) => {
@@ -249,7 +250,7 @@ const handleReviewSubmit = async (item) => {
   const reviewText = item.tempReview;
 
   if (!rating || !reviewText) {
-    return alert("Please provide both rating and review.");
+    return toast.error("Please provide both rating and review.");
   }
 
   try {
@@ -294,16 +295,24 @@ const handleReviewSubmit = async (item) => {
       reviews: updatedReviews,
     });
 
-    alert("Review submitted successfully.");
+    toast.success("Review submitted successfully.");
     item.showForm = false;
     setRefresh((prev) => !prev);
   } catch (err) {
     console.error("Review error", err);
-    alert("Failed to submit review.");
+    toast.error("Failed to submit review.");
   }
 };
 
-
+   if (orders.length === 0) {
+    return <>
+        <Navbar></Navbar>
+        <div className="max-w-4xl mx-auto p-6 text-center text-gray-600">
+          <h2 className="text-2xl font-semibold mb-4">You have no previous orders!!</h2>
+          <p>Shop something...</p>
+        </div>
+        </>
+  }
   return (
     <>
       <Navbar />

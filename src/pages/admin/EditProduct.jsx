@@ -56,7 +56,7 @@ function EditProduct() {
 
   return (
     <div className="max-w-xl mx-auto mt-10 p-6 bg-white rounded-lg shadow">
-      <h2 className="text-2xl font-bold mb-6 text-center">Edit Product</h2>
+      <h2 className="text-2xl text-pink-600 font-bold mb-6 text-center">Edit Product</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
 
         <div>
@@ -94,7 +94,7 @@ function EditProduct() {
           <input type="text" name="image" value={product.image} onChange={handleChange} className="w-full border rounded px-3 py-2" />
         </div>
 
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">
+        <button type="submit" className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 w-full">
           Update Product
         </button>
       </form>

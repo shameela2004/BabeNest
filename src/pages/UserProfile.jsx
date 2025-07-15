@@ -182,7 +182,7 @@ function UserProfile() {
     }).then((result) => {
       if (result.isConfirmed) {
         logout(); // Use AuthContext logout
-        navigate('/login');
+        // navigate('/');
         Swal.fire('Logged out!', 'You have been logged out.', 'success');
       }
     });

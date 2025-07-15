@@ -17,7 +17,7 @@ createRoot(document.getElementById('root')).render(
         <CartProvider>
           <WishlistProvider>
            <Toaster
-        position="bottom-center"
+        position="top-center"
         reverseOrder={false}
         toastOptions={{
           success: {

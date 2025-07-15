@@ -34,7 +34,7 @@ export const WishlistProvider = ({ children }) => {
   const addToWishlist = (product) => {
     if(!user|| !user.id) {
         navigate("/login")
-        toast.error('login first!');
+        // toast.error('login first!');
         return
       }
     const exists = wishlistItems.find(item => item.id === product.id)
@@ -52,7 +52,7 @@ export const WishlistProvider = ({ children }) => {
     const newWishlist = wishlistItems.filter(item => item.id !== productId)
     setWishlistItems(newWishlist)
     updateWishlistOnServer(newWishlist)
-    toast('Removed from wishlist!')
+    toast.error('Removed from wishlist!')
   }
 
   return (

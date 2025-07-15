@@ -26,7 +26,7 @@ function ManageOrders() {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/users");
+      const res = await axios.get("http://localhost:3001/users");
       const allOrders = res.data.flatMap((user) =>
         user.orders?.map((order) => ({
           ...order,
@@ -75,7 +75,7 @@ function ManageOrders() {
     const newStatus = e.target.value;
     setUpdatingStatus(true);
     try {
-      const userRes = await axios.get(`http://localhost:3000/users/${selectedOrder.userId}`);
+      const userRes = await axios.get(`http://localhost:3001/users/${selectedOrder.userId}`);
       const user = userRes.data;
       const updatedOrders = user.orders.map(order =>
         order.orderId === selectedOrder.orderId ? { ...order, status: newStatus } : order
@@ -154,6 +154,8 @@ function ManageOrders() {
         />
       </div>
 
+
+
       {/* Table */}
       <div className="overflow-x-auto border border-gray-300 rounded-md shadow-sm">
         <table className="min-w-full bg-white text-sm md:text-base">
@@ -183,9 +185,10 @@ function ManageOrders() {
                   <td className="p-3 border-b text-right font-semibold">₹{order.totalAmount}</td>
                   <td className="p-3 border-b hidden md:table-cell">{formatDate(order.orderDate)}</td>
                   <td className="p-3 border-b">
-                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${statusColors[order.status || "pending"]}`}>
-                      {order.status?.charAt(0).toUpperCase() + order.status?.slice(1)}
-                    </span>
+                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${statusColors[order.status || "pending"]}`}>
+  {(order.status || "pending").charAt(0).toUpperCase() + (order.status || "pending").slice(1)}
+</span>
+
                   </td>
                   <td className="p-3 border-b text-center space-x-2">
                     <button onClick={() => setSelectedOrder(order)} className="text-pink-600 hover:underline font-semibold">View</button>
@@ -211,7 +214,7 @@ function ManageOrders() {
         ))}
       </div>
 
-      {/* order modal */}
+
        {/* Modal */}
       {selectedOrder && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4" onClick={() => setSelectedOrder(null)}>

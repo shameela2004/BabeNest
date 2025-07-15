@@ -9,10 +9,12 @@ import {
   FaSignOutAlt
 } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import { useAuth } from '../../context/AuthProvider';
 
 function AdminLayout() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const {logout}=useAuth()
 
   const navItems = [
     { label: 'Dashboard', to: '/admin', icon: <FaTachometerAlt /> },
@@ -21,28 +23,22 @@ function AdminLayout() {
     { label: 'Manage Users', to: '/admin/users', icon: <FaUsers /> },
   ];
 
-  const handleLogout = () => {
-    // const confirmed = window.confirm("Are you sure you want to logout?");
-    // if (confirmed) {
-    //   localStorage.removeItem('authUser'); 
-    //   navigate('/login'); // redirect to login page
-    // }
+    const handleLogout = () => {
       Swal.fire({
-    title: `Logout from this account?`,
-    text: "",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#e3342f',
-    cancelButtonColor: '#6c757d',
-    confirmButtonText: 'Yes!'
-  }).then(async (result) => {
-    if (result.isConfirmed) {
-         localStorage.removeItem('authUser'); 
-      navigate('/login'); 
-      Swal.fire('Logout success!', 'success');
-    }
-  });
-  };
+        title: `Logout from this account?`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#e3342f',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Yes!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          logout(); 
+          // navigate('/');
+          Swal.fire('Logged out!', 'You have been logged out.', 'success');
+        }
+      });
+    };
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col md:flex-row">

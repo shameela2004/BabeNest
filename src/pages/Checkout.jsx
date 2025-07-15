@@ -65,7 +65,7 @@ function Checkout() {
   e.preventDefault();
 
   if (!user) {
-    toast.error("Please login first.");
+    // toast.error("Please login first.");
     navigate("/login");
     return;
   }
@@ -85,6 +85,7 @@ function Checkout() {
     customerAddress: formData.address,
     items: cartItems,
     totalAmount: totalPrice,
+    status: "pending", 
     orderDate: new Date().toISOString(),
   };
 

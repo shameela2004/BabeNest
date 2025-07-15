@@ -23,6 +23,7 @@ import ManageOrders from './pages/admin/ManageOrders'
 import UserDetails from './pages/admin/UserDetails'
 import ManageUsers from './pages/admin/ManageUsers'
 import UserProfile from './pages/UserProfile'
+import UserRoute from './components/common/UserRoute'
 
 function App() {
   return (
@@ -38,11 +39,11 @@ function App() {
         <Route path='/register' element={<Register/>}></Route>
 
         <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
-        <Route path="/myorders" element={<OrderHistory />} />
+        <Route path="/myorders" element={<ProtectedRoute><OrderHistory /></ProtectedRoute>} />
         <Route path="/products/:id" element={<ProductDetails/>}/>
 
         <Route path="/wishlist" element={<ProtectedRoute><Wishlist/></ProtectedRoute>}/>
-        <Route path="/profile" element={<UserProfile/>}/>
+        <Route path="/profile" element={<ProtectedRoute><UserProfile/></ProtectedRoute>}/>
 
 
         <Route path="/admin" element={<AdminRoute><AdminLayout/></AdminRoute>}>

@@ -12,6 +12,11 @@ function Login() {
   const { login } = useAuth();
   const handlesubmit = async (e) => {
     e.preventDefault();
+    if (!form.email.trim() || !form.password.trim()) {
+    toast.error("Please fill in both fields");
+    return;
+  }
+
     try {
       const res = await axios.get(
         `http://localhost:3001/users?email=${form.email}&password=${form.password}`
@@ -55,10 +60,10 @@ function Login() {
             </nav>
     <div className="min-h-screen flex items-center justify-center bg-cover bg-center"
   style={{ backgroundImage: "url('/images/hero2.jpg')" }}>
-            <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent flex flex-col justify-center items-center  p-4">
+            <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent flex flex-col justify-center items-center  p-4">
 
       <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow">
-        <h1 className="font-bold text-pink-500 text-2xl mb-4 text-center">
+        <h1 className="font-bold text-pink-600 text-2xl mb-4 text-center">
           LOGIN
         </h1>
         <form onSubmit={handlesubmit}>

@@ -282,21 +282,28 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 import axios from 'axios';
+import { useAuth } from '../context/AuthProvider';
 
 export default function Home() {
   const [featured, setFeatured] = useState([]);
   const navigate = useNavigate();
-
+  const {user}=useAuth()
+   
   useEffect(() => {
     axios.get('http://localhost:3001/products?_sort=id&_order=desc&_limit=10')
       .then(res => setFeatured(res.data))
       .catch(err => console.log(err));
   }, []);
+   useEffect(() => {
+    if (user && user.role === 'admin') {
+      navigate('/admin');
+    }
+  }, [user, navigate]);
 
   return (
     <>
       <Navbar />
-
+      
       {/* Hero Section */}
       <section className="relative h-[80vh] overflow-hidden">
         <img src="images/hero2.jpg" alt="hero" className="object-cover w-full h-full" />

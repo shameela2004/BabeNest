@@ -55,7 +55,7 @@ const addToServer = async (newCart) => {
       if (loading) return;
       if(!user|| !user.id) {
         navigate("/login")
-        toast.error('login first!');
+        // toast.error('login first!');
         return
       }
         const UpdatedCart=(()=>{
