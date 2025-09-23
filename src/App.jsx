@@ -24,6 +24,7 @@ import UserDetails from './pages/admin/UserDetails'
 import ManageUsers from './pages/admin/ManageUsers'
 import UserProfile from './pages/UserProfile'
 import UserRoute from './components/common/UserRoute'
+import OrderSuccess from './pages/OrderSuccess'
 
 function App() {
   return (
@@ -33,20 +34,22 @@ function App() {
         <Route path='/products' element={<Products/>}/>
         <Route path='*' element={<PageNotFound/>}/>
 
-        <Route path='/cart' element={<ProtectedRoute><CartPage/></ProtectedRoute>}></Route>
+        <Route path='/cart' element={<ProtectedRoute roles={['user']}><CartPage/></ProtectedRoute>}></Route>
         <Route path='/login' element={<Login/>}></Route>
 
         <Route path='/register' element={<Register/>}></Route>
 
         <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
         <Route path="/myorders" element={<ProtectedRoute><OrderHistory /></ProtectedRoute>} />
+        <Route path="/order-success/:id" element={<OrderSuccess />} />
+
         <Route path="/products/:id" element={<ProductDetails/>}/>
 
-        <Route path="/wishlist" element={<ProtectedRoute><Wishlist/></ProtectedRoute>}/>
+        <Route path="/wishlist" element={<ProtectedRoute roles={['user']}><Wishlist/></ProtectedRoute>}/>
         <Route path="/profile" element={<ProtectedRoute><UserProfile/></ProtectedRoute>}/>
 
 
-        <Route path="/admin" element={<AdminRoute><AdminLayout/></AdminRoute>}>
+        <Route path="/admin" element={<ProtectedRoute roles={['admin']}><AdminLayout/></ProtectedRoute>}>
         <Route index element={<AdminDashboard/>}/>
         <Route path="/admin/products" element={<ManageProducts/>}/>
         <Route path="/admin/products/add" element={<AddProduct/>}/>

@@ -217,8 +217,8 @@ function ManageOrders() {
 
        {/* Modal */}
       {selectedOrder && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4" onClick={() => setSelectedOrder(null)}>
-          <div className="bg-white rounded-lg max-w-3xl w-full p-6 max-h-[90vh] overflow-y-auto shadow-lg" onClick={(e) => e.stopPropagation()}>
+        <div className="fixed inset-0   flex justify-center items-center z-50 p-4" onClick={() => setSelectedOrder(null)}>
+          <div className="bg-pink-50 rounded-lg max-w-3xl w-full p-6 max-h-[90vh] overflow-y-auto shadow-lg" onClick={(e) => e.stopPropagation()}>
             <h2 className="text-2xl font-bold mb-4 text-pink-700">Order Details - {selectedOrder.orderId}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               <div>

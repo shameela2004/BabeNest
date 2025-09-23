@@ -398,7 +398,7 @@
       "email": "a@gmail.com",
       "password": "a@gmail.com",
       "role": "user",
-      "blocked": true,
+      "blocked": false,
       "createdAt": "2025-07-11T10:00:00.000Z",
       "cart": [],
       "wishlist": [
@@ -493,7 +493,7 @@
           ],
           "totalAmount": 698,
           "orderDate": "2025-07-07T09:07:47.412Z",
-          "status": "delivered"
+          "status": "shipped"
         },
         {
           "orderId": "ORD-1751947242373-8298",
@@ -655,15 +655,6 @@
       ]
     },
     {
-      "id": "5282",
-      "name": "s",
-      "email": "s@gmail.com",
-      "password": "123",
-      "blocked": false,
-      "role": "user",
-      "createdAt": "2025-07-11T10:00:00.000Z"
-    },
-    {
       "id": "1e6b",
       "name": "ssss",
       "email": "s@gmail.com",
@@ -679,7 +670,27 @@
       "password": "hamid12345",
       "blocked": false,
       "createdAt": "2025-07-11T10:00:00.000Z",
-      "cart": [],
+      "cart": [
+        {
+          "id": "4",
+          "name": "Baby Shampoo - 200ml",
+          "category": "Baby Care",
+          "price": 249,
+          "image": "/images/babeshampoo.avif",
+          "description": "Tear-free formula made with gentle ingredients.",
+          "stock": "25",
+          "reviews": [
+            {
+              "userName": "a",
+              "rating": 4,
+              "review": "very nice shampoo...100% suitable for the babies",
+              "date": "2025-07-11T09:18:33.697Z"
+            }
+          ],
+          "rating": "3.5",
+          "quantity": 1
+        }
+      ],
       "orders": [
         {
           "orderId": "ORD-1751965893452-928",
@@ -781,6 +792,40 @@
           ],
           "totalAmount": 1593,
           "orderDate": "2025-07-15T04:13:33.906Z"
+        },
+        {
+          "orderId": "ORD-1757391757655-9650",
+          "customerName": "hamid sha",
+          "customerEmail": "h@gmail.com",
+          "customerPhone": "1234567890",
+          "customerAddress": "hamid sjwui wkjjnd wjxjxnswn wjhnswn jwnn wjhjnh",
+          "items": [
+            {
+              "id": "6",
+              "name": "Silicone Bib - Pink",
+              "category": "Feeding",
+              "price": 199,
+              "rating": "4.6",
+              "image": "/images/feeding3.jpg",
+              "description": "Waterproof bib with food catcher pocket.",
+              "stock": "35",
+              "quantity": 1
+            },
+            {
+              "id": "2",
+              "name": "Newborn Romper - Animal Print",
+              "category": "Clothing",
+              "price": 499,
+              "rating": " 3",
+              "image": "/images/romberanimalprint.jpg",
+              "description": "Cute animal printed romper for daily comfort.",
+              "stock": "15",
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 698,
+          "status": "pending",
+          "orderDate": "2025-09-09T04:22:37.655Z"
         }
       ],
       "wishlist": [
@@ -829,7 +874,19 @@
       "name": "Ashfaque",
       "email": "ashfaque@gmail.com",
       "password": "ashfaque@gmail.com",
-      "cart": [],
+      "cart": [
+        {
+          "id": "3",
+          "name": "Diaper Rash Cream - 50g",
+          "category": "Baby Care",
+          "price": 199,
+          "image": "/images/rashcream.avif",
+          "description": "Protects and heals baby skin from rashes.",
+          "stock": "30",
+          "reviews": [],
+          "quantity": 1
+        }
+      ],
       "wishlist": [
         {
           "id": "2",
@@ -839,6 +896,16 @@
           "image": "https://images.unsplash.com/photo-1672863279585-f50438c73b62?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           "description": "Cute animal printed romper for daily comfort..",
           "stock": "20",
+          "reviews": []
+        },
+        {
+          "id": "3",
+          "name": "Diaper Rash Cream - 50g",
+          "category": "Baby Care",
+          "price": 199,
+          "image": "/images/rashcream.avif",
+          "description": "Protects and heals baby skin from rashes.",
+          "stock": "30",
           "reviews": []
         }
       ],
@@ -867,6 +934,12 @@
           "orderDate": "2025-07-15T10:42:33.170Z"
         }
       ]
+    },
+    {
+      "id": "3056",
+      "name": "Samadev",
+      "email": "sam@gmail.com",
+      "password": "sam@gmail.com"
     }
   ]
 }

@@ -181,13 +181,13 @@ const paginatedProducts = filteredProducts.slice(
 
       {/* Product Detail Modal */}
       {selectedProduct && (
-        <div className="fixed inset-0 flex items-center justify-center bg-pink-200 bg-opacity-30 z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg ">
+        <div className="fixed inset-0 flex items-center justify-center  bg-opacity-30 z-50">
+          <div className="bg-pink-50 p-6 rounded-lg shadow-lg ">
             <h2 className="text-xl font-bold mb-2">{selectedProduct.name}</h2>
             <img
               src={selectedProduct.image}
               alt={selectedProduct.name}
-              className="w-full h-48 object-cover rounded mb-4"
+              className="w-full h-100 object-cover rounded mb-4"
             />
             <p><strong>Category:</strong> {selectedProduct.category}</p>
             <p><strong>Price:</strong> ₹{selectedProduct.price}</p>

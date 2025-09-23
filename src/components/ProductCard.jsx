@@ -155,7 +155,7 @@ function ProductCard({ product }) {
       <div className="p-4 text-center">
         <h3 className="text-lg font-semibold text-gray-800 line-clamp-2">{product.name}</h3>
         <p className="text-pink-600 font-bold text-lg mt-1">₹{product.price}</p>
-        <p className="text-gray-500 text-sm">{product.category}</p>
+        <p className="text-gray-500 text-sm">{product.categoryName}</p>
 
         {/* Rating */}
         <div className="flex justify-center items-center gap-2 mt-2">
