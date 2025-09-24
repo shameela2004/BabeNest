@@ -419,49 +419,124 @@
 
 
 
-
-
-
-
-
-
-
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthProvider";
 import Navbar from "../components/common/Navbar";
-import api from "../api/axios";
 import toast from "react-hot-toast";
+import api from "../api/axios";
 
 const OrderHistory = () => {
   const { user } = useAuth();
   const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const fetchOrders = async () => {
-    try {
-      const res = await api.get("/Orders");
-      setOrders(res.data.data || []);
-    } catch (err) {
-      console.error(err);
-      toast.error("Failed to fetch orders.");
-    }
-  };
-
+  // Fetch orders & attach user reviews
   useEffect(() => {
+    const fetchOrders = async () => {
+      try {
+        const res = await api.get("/orders");
+        const fetchedOrders = res.data.data || [];
+
+        // For each delivered order, attach existing user reviews
+        const ordersWithReviews = await Promise.all(
+          fetchedOrders.map(async (order) => {
+            if (order.orderStatus === "Delivered") {
+              const itemsWithReviews = await Promise.all(
+                order.items.map(async (item) => {
+                  try {
+                    const reviewRes = await api.get(
+                      `/reviews/product/${item.productId}`
+                    );
+                    const userReview = reviewRes.data.data?.find(
+                      (r) => r.userName === user.name
+                    );
+
+                    return {
+                      ...item,
+                      tempRating: userReview?.rating || null,
+                      tempReview: userReview?.reviewText || "",
+                      showForm: false, // form initially closed
+                    };
+                  } catch (err) {
+                    console.error("Error fetching review", err);
+                    return { ...item, tempRating: null, tempReview: "", showForm: false };
+                  }
+                })
+              );
+
+              return { ...order, items: itemsWithReviews };
+            } else {
+              return order;
+            }
+          })
+        );
+
+        setOrders(ordersWithReviews);
+      } catch (err) {
+        console.error("Error fetching orders", err);
+        toast.error("Failed to load orders");
+      } finally {
+        setLoading(false);
+      }
+    };
+
     if (user) fetchOrders();
   }, [user]);
 
-  const formatDate = (iso) => new Date(iso).toLocaleString();
+  const formatDate = (iso) =>
+    new Date(iso).toLocaleString(undefined, {
+      dateStyle: "medium",
+      timeStyle: "short",
+    });
 
-  const canCancel = (order) => order.status === "Pending";
+const canCancel = (order) =>
+  order.orderStatus === "Pending" &&
+  (order.paymentMethod !== "Online" || order.paymentStatus !== "Paid") &&
+  Date.now() - new Date(order.orderDate) < 24 * 60 * 60 * 1000;
+
 
   const handleCancel = async (orderId) => {
     try {
-      await api.put(`/Orders/cancel/${orderId}`);
-      toast.success("Order cancelled successfully.");
-      fetchOrders();
+      await api.put(`/orders/cancel/${orderId}`);
+      toast.success("Order cancelled");
+      setOrders((prev) =>
+        prev.map((o) =>
+          o.id === orderId ? { ...o, orderStatus: "Cancelled" } : o
+        )
+      );
+    } catch {
+      toast.error("Cancel failed");
+    }
+  };
+
+  const handleReviewSubmit = async (item) => {
+    if (!item.tempRating || !item.tempReview) {
+      return toast.error("Please provide both rating and review.");
+    }
+
+    try {
+      await api.post("/reviews", {
+        productId: item.productId,
+        rating: parseInt(item.tempRating),
+        reviewText: item.tempReview,
+      });
+
+      toast.success("Review submitted successfully.");
+
+      // Close the form and update state
+      setOrders((prevOrders) =>
+        prevOrders.map((order) => ({
+          ...order,
+          items: order.items.map((i) =>
+            i.id === item.id
+              ? { ...i, tempRating: item.tempRating, tempReview: item.tempReview, showForm: false }
+              : i
+          ),
+        }))
+      );
     } catch (err) {
-      console.error(err);
-      toast.error("Cancel failed.");
+      console.error("Review error", err);
+      toast.error("Failed to submit review.");
     }
   };
 
@@ -473,13 +548,26 @@ const OrderHistory = () => {
     );
   }
 
+  if (loading) {
+    return (
+      <>
+        <Navbar />
+        <div className="max-w-4xl mx-auto p-6 text-center text-gray-600">
+          Loading orders...
+        </div>
+      </>
+    );
+  }
+
   if (orders.length === 0) {
     return (
       <>
         <Navbar />
         <div className="max-w-4xl mx-auto p-6 text-center text-gray-600">
-          <h2 className="text-2xl font-semibold mb-4">You have no previous orders!</h2>
-          <p>Shop something amazing 😍</p>
+          <h2 className="text-2xl font-semibold mb-4">
+            You have no previous orders!!
+          </h2>
+          <p>Shop something...</p>
         </div>
       </>
     );
@@ -488,45 +576,174 @@ const OrderHistory = () => {
   return (
     <>
       <Navbar />
-      <div className="max-w-4xl mx-auto p-6">
+      <div className="max-w-5xl mx-auto p-6 space-y-6">
         <h1 className="text-3xl font-bold mb-6 text-pink-700">My Orders</h1>
-        {orders.map(order => (
-          <div key={order.id} className="border rounded-lg mb-6 overflow-hidden shadow-sm">
-            <div className="bg-pink-100 px-6 py-3 flex justify-between items-center">
-              <div className="font-semibold">Order ID: <span className="font-normal">{order.id}</span></div>
-              <div className="font-semibold">Date: <span className="font-normal">{formatDate(order.orderDate)}</span></div>
-            </div>
-            <div className="px-6 py-4 bg-white">
-              <div className="flex flex-wrap justify-between items-center mb-4">
-                <div className="text-gray-800 font-semibold">Total: ₹{order.totalAmount.toFixed(2)}</div>
-                <div className="text-sm">
-                  <span className={`px-2 py-1 rounded-full ${
-                    order.orderStatus === 'Pending' ? 'bg-yellow-200 text-yellow-800' :
-                    order.orderStatus === 'Shipped' ? 'bg-blue-200 text-blue-800' :
-                    order.orderStatus === 'Delivered' ? 'bg-green-200 text-green-800' :
-                    'bg-red-200 text-red-800'
-                  }`}>{order.orderStatus}</span>
-                </div>
+
+        {orders.map((order) => (
+          <div
+            key={order.id}
+            className="border rounded-xl shadow-sm overflow-hidden bg-white hover:shadow-md transition"
+          >
+            {/* Header */}
+            <div className="bg-gradient-to-r from-pink-100 to-pink-200 px-6 py-4 flex flex-wrap justify-between items-center">
+              <div>
+                <p className="text-sm text-gray-600">Order No:</p>
+                <p className="font-semibold">{order.orderNumber}</p>
               </div>
               <div>
-                <strong className="block text-lg mb-2 text-pink-700">Items:</strong>
-                <ul className="space-y-2">
-                  {order.items.map(item => (
-                    <li key={item.productId} className="flex items-center gap-4 border p-3 rounded-lg bg-gray-50">
-                      <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded" />
+                <p className="text-sm text-gray-600">Placed on:</p>
+                <p className="font-semibold">{formatDate(order.orderDate)}</p>
+              </div>
+            </div>
+
+            {/* Body */}
+            <div className="px-6 py-4 space-y-4">
+              {/* Status badges */}
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-sm font-semibold text-gray-600">
+                  Order Status:
+                </span>
+                <span
+                  className={`px-3 py-1 rounded-full text-sm font-medium ${
+                    order.orderStatus === "Pending"
+                      ? "bg-yellow-100 text-yellow-700"
+                      : order.orderStatus === "Shipped"
+                      ? "bg-blue-100 text-blue-700"
+                      : order.orderStatus === "Delivered"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-red-100 text-red-700"
+                  }`}
+                >
+                  {order.orderStatus}
+                </span>
+
+                <span className="text-sm font-semibold text-gray-600 ml-4">
+                  Payment Status:
+                </span>
+                <span
+                  className={`px-3 py-1 rounded-full text-sm font-medium ${
+                    order.paymentStatus === "Pending"
+                      ? "bg-yellow-50 text-yellow-700"
+                      : order.paymentStatus === "Paid"
+                      ? "bg-green-50 text-green-700"
+                      : "bg-red-50 text-red-700"
+                  }`}
+                >
+                  {order.paymentStatus}
+                </span>
+              </div>
+
+              {/* Payment method & total */}
+              <div className="flex flex-wrap justify-between text-gray-700">
+                <p>
+                  <strong>Payment Method:</strong> {order.paymentMethod}
+                </p>
+                <p className="font-bold text-lg text-pink-700">
+                  Total: ₹{order.totalAmount.toFixed(2)}
+                </p>
+              </div>
+
+              {/* Customer */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-700 text-sm">
+                <p>
+                  <strong>Name:</strong> {order.customerName}
+                </p>
+                <p>
+                  <strong>Email:</strong> {order.customerEmail}
+                </p>
+                <p>
+                  <strong>Phone:</strong> {order.customerPhone}
+                </p>
+                <p>
+                  <strong>Address:</strong> {order.customerAddress}
+                </p>
+              </div>
+
+              {/* Items */}
+              <div>
+                <h3 className="font-semibold text-gray-800 mb-2">Items</h3>
+                <ul className="divide-y">
+                  {order.items.map((item) => (
+                    <li
+                      key={item.id}
+                      className="flex flex-col sm:flex-row items-start sm:items-center gap-4 py-3"
+                    >
+                      <img
+                        src={item.productImage}
+                        alt={item.productName}
+                        className="w-20 h-20 object-cover rounded-md border"
+                      />
                       <div className="flex-1">
-                        <div className="font-semibold">{item.name}</div>
-                        <div className="text-gray-600 text-sm">Qty: {item.quantity} — ₹{item.price * item.quantity}</div>
+                        <p className="font-medium text-gray-800">
+                          {item.productName}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          Qty: {item.quantity} × ₹{item.price}
+                        </p>
                       </div>
+                      <div className="font-semibold text-gray-800">
+                        ₹{(item.price * item.quantity).toFixed(2)}
+                      </div>
+
+                      {/* Review section */}
+                      {order.orderStatus === "Delivered" && (
+                        <div className="ml-auto w-full sm:w-64 mt-2 sm:mt-0">
+                          {!item.showForm ? (
+                            <button
+                              className="bg-pink-500 text-white px-3 py-1 rounded hover:bg-pink-600 text-sm"
+                              onClick={() => {
+                                item.showForm = true;
+                                setOrders((prev) => [...prev]);
+                              }}
+                            >
+                              {item.tempRating ? "Edit Review" : "Add Review"}
+                            </button>
+                          ) : (
+                            <div className="space-y-2">
+                              <select
+                                value={item.tempRating || ""}
+                                onChange={(e) => {
+                                  item.tempRating = e.target.value;
+                                  setOrders((prev) => [...prev]);
+                                }}
+                                className="w-full border px-3 py-2 rounded text-sm"
+                              >
+                                <option value="">Select Rating</option>
+                                {[1, 2, 3, 4, 5].map((n) => (
+                                  <option key={n} value={n}>
+                                    {"★".repeat(n)} ({n})
+                                  </option>
+                                ))}
+                              </select>
+                              <textarea
+                                value={item.tempReview || ""}
+                                className="w-full border px-3 py-2 rounded text-sm"
+                                placeholder="Write your review..."
+                                onChange={(e) => {
+                                  item.tempReview = e.target.value;
+                                  setOrders((prev) => [...prev]);
+                                }}
+                              />
+                              <button
+                                onClick={() => handleReviewSubmit(item)}
+                                className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 text-sm"
+                              >
+                                Submit Review
+                              </button>
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </li>
                   ))}
                 </ul>
               </div>
 
+              {/* Cancel button */}
               {canCancel(order) && (
                 <button
                   onClick={() => handleCancel(order.id)}
-                  className="mt-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+                  className="mt-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm"
                 >
                   Cancel Order
                 </button>

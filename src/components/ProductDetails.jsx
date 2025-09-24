@@ -318,32 +318,150 @@
 // export default ProductDetails;
 
 
-import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { useCart } from '../context/CartProvider';
-import Navbar from './common/Navbar';
-import { FaHeart } from 'react-icons/fa';
-import { useWishlist } from '../context/WishlistProvider';
-import api from '../api/axios';
+
+
+//working code after connecting to backend and implementing cart, wishlist , order
+// import React, { useEffect, useState } from 'react';
+// import { useNavigate, useParams } from 'react-router-dom';
+// import { useCart } from '../context/CartProvider';
+// import Navbar from './common/Navbar';
+// import { FaHeart } from 'react-icons/fa';
+// import { useWishlist } from '../context/WishlistProvider';
+// import api from '../api/axios';
+
+// function ProductDetails() {
+//   const { id } = useParams(); // product id from URL
+//   const [product, setProduct] = useState(null);
+//   const { addToCart } = useCart();
+//   const navigate = useNavigate();
+//   const { wishlistItems, addToWishlist, removeFromWishlist } = useWishlist();
+
+//   // Check if product is in wishlist
+//   const isInWishlist = wishlistItems.some((item) => item.productId === Number(id));
+
+//   // Toggle wishlist
+//   const toggleWishlist = (e) => {
+//     e.preventDefault();
+//     e.stopPropagation();
+//     if (!product) return;
+
+//     if (isInWishlist) {
+//       const wishlistItem = wishlistItems.find((item) => item.productId === Number(id));
+//       if (wishlistItem) removeFromWishlist(wishlistItem.id);
+//     } else {
+//       addToWishlist({
+//         id: product.id,
+//         name: product.name,
+//         price: product.price,
+//         image: product.image,
+//         category: product.category,
+//       });
+//     }
+//   };
+
+//   // Fetch product details
+//   useEffect(() => {
+//     if (!id) return;
+//     api
+//       .get(`/products/${id}`)
+//       .then((res) => setProduct(res.data.data))
+//       .catch((e) => console.error('Error fetching product:', e));
+//   }, [id]);
+
+//   const handleBuyNow = () => {
+//     if (!product) return;
+//     addToCart(product);
+//     navigate('/checkout');
+//   };
+
+//   if (!product) {
+//     return (
+//       <>
+//         <Navbar />
+//         <div className="text-center text-gray-600 mt-10">Loading product details...</div>
+//       </>
+//     );
+//   }
+
+//   return (
+//     <>
+//       <Navbar />
+//       <div className="max-w-7xl mx-auto p-6 md:flex gap-10">
+//         {/* Left Side */}
+//         <div className="md:w-1/2 sticky top-24 self-start space-y-6 relative">
+//           <button
+//             onClick={toggleWishlist}
+//             className="absolute top-3 right-3 z-10 bg-white rounded-full p-2 shadow-md hover:scale-110 transition"
+//             title={isInWishlist ? 'Remove from wishlist' : 'Add to wishlist'}
+//           >
+//             <FaHeart size={20} className={isInWishlist ? 'text-red-500' : 'text-gray-400'} />
+//           </button>
+
+//           <img
+//             src={product.image}
+//             alt={product.name}
+//             className="w-full h-[450px] object-contain rounded-xl border shadow"
+//           />
+
+//           <div className="flex gap-4">
+//             <button
+//               onClick={() => addToCart(product)}
+//               className="flex-1 px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white rounded-lg shadow text-lg"
+//             >
+//               Add to Cart
+//             </button>
+//             <button
+//               onClick={handleBuyNow}
+//               className="flex-1 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow text-lg"
+//             >
+//               Buy Now
+//             </button>
+//           </div>
+//         </div>
+
+//         {/* Right Side */}
+//         <div className="md:w-1/2 space-y-6 overflow-y-auto max-h-[calc(100vh-100px)] pr-4">
+//           <h1 className="text-3xl font-bold text-pink-700">{product.name}</h1>
+//           <p className="text-xl font-semibold text-gray-800">₹{product.price}</p>
+//           <p className="text-gray-700">{product.description}</p>
+//           <p className="text-sm text-gray-500">Stock: {product.stock}</p>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+
+// export default ProductDetails;
+
+
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import Navbar from "./common/Navbar";
+import { useWishlist } from "../context/WishlistProvider";
+import { FaHeart, FaStar } from "react-icons/fa";
+import api from "../api/axios";
+import { useCart } from "../context/CartProvider";
 
 function ProductDetails() {
-  const { id } = useParams(); // product id from URL
-  const [product, setProduct] = useState(null);
-  const { addToCart } = useCart();
+  const { id } = useParams();
   const navigate = useNavigate();
+  const { addToCart } = useCart();
   const { wishlistItems, addToWishlist, removeFromWishlist } = useWishlist();
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // Check if product is in wishlist
-  const isInWishlist = wishlistItems.some((item) => item.productId === Number(id));
+  const isInWishlist = wishlistItems.some(
+    (item) => item.productId === Number(id)
+  );
 
-  // Toggle wishlist
   const toggleWishlist = (e) => {
     e.preventDefault();
     e.stopPropagation();
     if (!product) return;
-
     if (isInWishlist) {
-      const wishlistItem = wishlistItems.find((item) => item.productId === Number(id));
+      const wishlistItem = wishlistItems.find(
+        (item) => item.productId === Number(id)
+      );
       if (wishlistItem) removeFromWishlist(wishlistItem.id);
     } else {
       addToWishlist({
@@ -351,31 +469,114 @@ function ProductDetails() {
         name: product.name,
         price: product.price,
         image: product.image,
-        category: product.category,
+        category: product.categoryName,
       });
     }
   };
 
-  // Fetch product details
   useEffect(() => {
-    if (!id) return;
-    api
-      .get(`/products/${id}`)
-      .then((res) => setProduct(res.data.data))
-      .catch((e) => console.error('Error fetching product:', e));
-  }, [id]);
+  if (!id) return;
+
+  const fetchProduct = async () => {
+    setLoading(true);
+    try {
+      // 1️⃣ Fetch product
+      let productData;
+      try {
+        const res = await api.get(`/products/${id}`);
+        productData = res.data.data;
+        if (!productData) {
+          setProduct(null);
+          return;
+        }
+      } catch (err) {
+        if (err.response?.status === 404) {
+          // Product not found
+          setProduct(null);
+          return;
+        } else {
+          throw err;
+        }
+      }
+
+      // 2️⃣ Fetch reviews safely
+      let reviews = [];
+      try {
+        const reviewRes = await api.get(`/reviews/product/${id}`);
+        reviews = reviewRes.data.data || [];
+      } catch (err) {
+        if (err.response?.status === 404) {
+          reviews = []; // no reviews yet
+        } else {
+          throw err;
+        }
+      }
+
+      productData.reviews = reviews;
+
+      // 3️⃣ Calculate average rating safely
+      productData.rating =
+        reviews.length > 0
+          ? reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length
+          : 0;
+
+      setProduct(productData);
+    } catch (err) {
+      console.error("Unexpected error fetching product or reviews:", err);
+      setProduct(null);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchProduct();
+}, [id]);
+
 
   const handleBuyNow = () => {
     if (!product) return;
     addToCart(product);
-    navigate('/checkout');
+    navigate("/checkout");
   };
+
+  const displayStars = (rating, size = 18) => {
+    const fullStars = Math.floor(rating || 0);
+    const halfStar = rating - fullStars >= 0.5;
+    return (
+      <div className="flex items-center gap-1">
+        {Array.from({ length: 5 }, (_, i) => (
+          <FaStar
+            key={i}
+            size={size}
+            className={
+              i < fullStars
+                ? "text-yellow-400"
+                : i === fullStars && halfStar
+                ? "text-yellow-300"
+                : "text-gray-300"
+            }
+          />
+        ))}
+      </div>
+    );
+  };
+
+  if (loading) {
+    return (
+      <>
+        <Navbar />
+        <div className="text-center mt-10 text-gray-600">
+          Loading product details...
+        </div>
+      </>
+    );
+  }
 
   if (!product) {
     return (
       <>
         <Navbar />
-        <div className="text-center text-gray-600 mt-10">Loading product details...</div>
+        <div className="text-center mt-10 text-red-500">Product not found.</div>
       </>
     );
   }
@@ -383,45 +584,106 @@ function ProductDetails() {
   return (
     <>
       <Navbar />
-      <div className="max-w-7xl mx-auto p-6 md:flex gap-10">
-        {/* Left Side */}
-        <div className="md:w-1/2 sticky top-24 self-start space-y-6 relative">
-          <button
-            onClick={toggleWishlist}
-            className="absolute top-3 right-3 z-10 bg-white rounded-full p-2 shadow-md hover:scale-110 transition"
-            title={isInWishlist ? 'Remove from wishlist' : 'Add to wishlist'}
-          >
-            <FaHeart size={20} className={isInWishlist ? 'text-red-500' : 'text-gray-400'} />
-          </button>
-
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-[450px] object-contain rounded-xl border shadow"
-          />
-
-          <div className="flex gap-4">
+      <div className="max-w-5xl mx-auto p-6 flex flex-col gap-10">
+        {/* Product Card */}
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row gap-6 p-6 hover:shadow-2xl transition duration-300 relative">
+          {/* Image Section */}
+          <div className="md:w-1/2 relative flex items-center justify-center">
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-[400px] md:h-[450px] object-cover rounded-lg"
+            />
             <button
-              onClick={() => addToCart(product)}
-              className="flex-1 px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white rounded-lg shadow text-lg"
+              onClick={toggleWishlist}
+              className="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow-md hover:scale-110 transition"
+              title={isInWishlist ? "Remove from wishlist" : "Add to wishlist"}
             >
-              Add to Cart
+              <FaHeart
+                size={24}
+                className={isInWishlist ? "text-red-500" : "text-gray-400"}
+              />
             </button>
-            <button
-              onClick={handleBuyNow}
-              className="flex-1 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow text-lg"
-            >
-              Buy Now
-            </button>
+          </div>
+
+          {/* Details Section */}
+          <div className="md:w-1/2 flex flex-col justify-between">
+            <div className="space-y-4">
+              <h1 className="text-3xl font-bold text-pink-700">{product.name}</h1>
+              <p className="text-xl font-semibold text-gray-800">₹{product.price}</p>
+
+              {/* Average Rating */}
+              <div className="flex items-center gap-3">
+                {displayStars(product.rating, 20)}
+                <span className="text-lg font-semibold text-gray-800">
+                  {product.rating.toFixed(1)} / 5
+                </span>
+                <span className="text-gray-500">
+                  ({product.reviews?.length || 0} reviews)
+                </span>
+              </div>
+
+              <p className="text-gray-700 min-h-[80px]">
+                {product.description || "No description provided."}
+              </p>
+              <p className="text-sm text-gray-500">Stock: {product.stock}</p>
+            </div>
+
+            <div className="flex gap-4 mt-4">
+              <button
+                onClick={() => addToCart(product)}
+                className="flex-1 px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white rounded-lg shadow text-lg transition"
+              >
+                Add to Cart
+              </button>
+              <button
+                onClick={handleBuyNow}
+                className="flex-1 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow text-lg transition"
+              >
+                Buy Now
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Right Side */}
-        <div className="md:w-1/2 space-y-6 overflow-y-auto max-h-[calc(100vh-100px)] pr-4">
-          <h1 className="text-3xl font-bold text-pink-700">{product.name}</h1>
-          <p className="text-xl font-semibold text-gray-800">₹{product.price}</p>
-          <p className="text-gray-700">{product.description}</p>
-          <p className="text-sm text-gray-500">Stock: {product.stock}</p>
+        {/* Reviews Section */}
+        <div className="mt-6">
+          <h2 className="text-2xl font-bold text-pink-700 mb-6">
+            Customer Reviews
+          </h2>
+          {product.reviews && product.reviews.length > 0 ? (
+            <div className="grid gap-6 md:grid-cols-2">
+              {product.reviews.map((review, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white shadow-md border border-gray-200 rounded-lg p-5 hover:shadow-lg transition"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="bg-pink-100 text-pink-600 w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">
+                      {review.userName.charAt(0).toUpperCase()}
+                    </div>
+                    <div>
+                      <p className="text-pink-700 font-semibold">{review.userName}</p>
+                      <p className="text-sm text-gray-400">
+                        {new Date(review.date).toLocaleDateString()}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Review Stars */}
+                  <div className="flex items-center gap-1 mb-2">
+                    {displayStars(review.rating)}
+                  </div>
+
+                  <p className="text-gray-800">{review.reviewText}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-gray-500 italic">
+              No reviews yet. Be the first to review!
+            </p>
+          )}
         </div>
       </div>
     </>
@@ -429,5 +691,9 @@ function ProductDetails() {
 }
 
 export default ProductDetails;
+
+
+
+
 
 
