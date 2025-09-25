@@ -277,6 +277,11 @@
 
 
 
+
+
+
+// correct working home page before connecting with backend to fetch the top deals----------------------
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/common/Navbar';
@@ -433,3 +438,106 @@ export default function Home() {
     </>
   );
 }
+
+
+
+
+
+// testing one 
+
+
+// import React, { useEffect, useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import Navbar from '../components/common/Navbar';
+// import Footer from '../components/common/Footer';
+// import api from '../api/axios'; // use your axios instance with auth
+// import { useAuth } from '../context/AuthProvider';
+
+// export default function Home() {
+//   const [featured, setFeatured] = useState([]);
+//   const navigate = useNavigate();
+//   const { user } = useAuth();
+   
+//   useEffect(() => {
+//     const fetchFeatured = async () => {
+//       try {
+//         const res = await api.get('/Product', {
+//           params: {
+//             page: 1,
+//             pageSize: 10,
+//             sortBy: 'id',
+//             order: 'desc'
+//           }
+//         });
+
+//         // Your backend sends items inside data.data.items
+//         setFeatured(res.data.data.items || []);
+//       } catch (err) {
+//         console.error('Failed to fetch featured products:', err);
+//       }
+//     };
+
+//     fetchFeatured();
+//   }, []);
+
+//   useEffect(() => {
+//     if (user && user.role === 'admin') {
+//       navigate('/admin');
+//     }
+//   }, [user, navigate]);
+
+//   return (
+//     <>
+//       <Navbar />
+      
+//       {/* Hero Section */}
+//       <section className="relative h-[80vh] overflow-hidden">
+//         <img src="images/hero2.jpg" alt="hero" className="object-cover w-full h-full" />
+//         <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent flex flex-col justify-center items-center text-center p-4">
+//           <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-lg mb-4 animate-fade-in">
+//             Welcome to BabeNest
+//           </h1>
+//           <p className="text-xl text-white mb-6 animate-fade-in delay-200">
+//             Discover best seller essentials for your little one.
+//           </p>
+//           <button
+//             onClick={() => navigate('/products')}
+//             className="bg-white text-pink-600 font-semibold px-8 py-3 rounded-full shadow-lg hover:scale-105 transition transform animate-fade-in delay-300"
+//           >
+//             Shop Now
+//           </button>
+//         </div>
+//       </section>
+
+//       {/* Top Products */}
+//       <section className="max-w-7xl mx-auto py-12 px-4">
+//         <h2 className="text-3xl font-bold text-pink-700 mb-6 text-center">Top Deals</h2>
+//         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+//           {featured.map(prod => (
+//             <div
+//               key={prod.id}
+//               className="bg-white rounded-xl shadow hover:shadow-lg transform hover:-translate-y-1 transition cursor-pointer"
+//               onClick={() => navigate(`/products/${prod.id}`)}
+//             >
+//               <div className="relative overflow-hidden h-48 rounded-t-xl">
+//                 <img
+//                   src={prod.image}
+//                   alt={prod.name}
+//                   className="object-center object-cover w-full h-full hover:scale-110 transition duration-500"
+//                 />
+//               </div>
+//               <div className="p-4 text-center">
+//                 <h3 className="font-semibold text-lg truncate">{prod.name}</h3>
+//                 <p className="mt-2 text-pink-600 font-bold">₹{prod.price}</p>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </section>
+
+//       {/* Rest of your homepage content */}
+//       {/* Feature highlights, newsletter, footer, etc. */}
+//       <Footer />
+//     </>
+//   );
+// }

@@ -347,13 +347,13 @@ function UserProfile() {
 
   const handleUpdate = async () => {
     try {
-      await callApiWithRefresh(() =>
+      
         api.put('/user/me', {
           username: formData.username,
           oldPassword: formData.oldPassword,
           newPassword: formData.newPassword
         })
-      );
+      
 
       // Update local state
       const updatedUser = { ...user, username: formData.username };

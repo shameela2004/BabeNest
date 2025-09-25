@@ -176,7 +176,155 @@
 
 
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+// correct functioning authprovider that i used till the connection with admin backend.. this is changed due to some 401 errors
+
+// import React, { createContext, useContext, useState, useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
+// import api from "../api/axios";
+// import toast from "react-hot-toast";
+
+// const AuthContext = createContext();
+// export const useAuth = () => useContext(AuthContext);
+
+// export const AuthProvider = ({ children }) => {
+//   const [user, setUser] = useState(null);
+//   const navigate = useNavigate();
+
+//   // Load user & token from localStorage on app start
+//   useEffect(() => {
+//     try {
+//       const storedUser = localStorage.getItem("user");
+//       const storedToken = localStorage.getItem("accessToken");
+
+//       if (storedUser) {
+//         const parsedUser = JSON.parse(storedUser);
+//         setUser(parsedUser);
+
+//         // Navigate based on role
+//         if (parsedUser.role.toLowerCase() === "admin") {
+//           navigate("/admin");
+//         } else {
+//           navigate("/");
+//         }
+//       }
+
+//       if (storedToken) {
+//         api.defaults.headers.common["Authorization"] = `Bearer ${storedToken}`;
+//       }
+//     } catch (err) {
+//       console.warn("Failed to load auth from storage:", err);
+//       localStorage.removeItem("user");
+//       localStorage.removeItem("accessToken");
+//     }
+//   }, []);
+
+//   // Login function
+//   const login = async (email, password) => {
+//     try {
+//       const res = await api.post("/auth/login", { email, password });
+//       const data = res.data.data;
+
+//       if (!data || !data.user) {
+//         toast.error("Login failed: invalid response from server");
+//         return null;
+//       }
+
+//       if (data.user.blocked) {
+//         toast.error("Your account has been blocked.");
+//         return null;
+//       }
+
+//       setUser(data.user);
+//       localStorage.setItem("user", JSON.stringify(data.user));
+//       localStorage.setItem("accessToken", data.accessToken);
+//       api.defaults.headers.common["Authorization"] = `Bearer ${data.accessToken}`;
+
+//       toast.success("Login successful!");
+
+//       // Navigate based on role
+//       if (data.user.role.toLowerCase() === "admin") {
+//         navigate("/admin");
+//       } else {
+//         navigate("/");
+//       }
+
+//       return data.user;
+//     } catch (err) {
+//       console.log("Login failed", err);
+//       toast.error(err.response?.data?.message || "Login failed");
+//       return null;
+//     }
+//   };
+
+//   // Logout function
+//   const logout = async () => {
+//     try {
+//       await api.post("/auth/logout"); // optional backend logout
+//     } catch (err) {
+//       console.warn("Backend logout error (will clear local state anyway):", err?.response?.data || err.message);
+//     } finally {
+//       setUser(null);
+//       localStorage.removeItem("user");
+//       localStorage.removeItem("accessToken");
+//       delete api.defaults.headers.common["Authorization"];
+//       navigate("/login");
+//       toast.success("Logged out successfully!");
+//     }
+//   };
+
+//   // Refresh token
+//   const refreshToken = async () => {
+//     try {
+//       const res = await api.post("/auth/refresh"); // HttpOnly cookie
+//       const data = res.data.data;
+
+//       if (!data?.accessToken) throw new Error("No access token in refresh response");
+
+//       localStorage.setItem("accessToken", data.accessToken);
+//       api.defaults.headers.common["Authorization"] = `Bearer ${data.accessToken}`;
+
+//       if (data.user) {
+//         setUser(data.user);
+//         localStorage.setItem("user", JSON.stringify(data.user));
+//       }
+
+//       return data.accessToken;
+//     } catch (err) {
+//       await logout();
+//       throw err;
+//     }
+//   };
+
+//   // Wrapper for API calls with auto-refresh
+//   const callApiWithRefresh = async (callback) => {
+//     try {
+//       return await callback();
+//     } catch (err) {
+//       if (err.response?.status === 401) {
+//         await refreshToken(); // try refresh
+//         return await callback(); // retry original request
+//       } else {
+//         throw err;
+//       }
+//     }
+//   };
+
+//   return (
+//     <AuthContext.Provider
+//       value={{ user, setUser, login, logout, refreshToken, callApiWithRefresh }}
+//     >
+//       {children}
+//     </AuthContext.Provider>
+//   );
+// };
+
+
+
+
+
+
+
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
 import toast from "react-hot-toast";
@@ -232,6 +380,7 @@ export const AuthProvider = ({ children }) => {
         return null;
       }
 
+      // Save user and access token
       setUser(data.user);
       localStorage.setItem("user", JSON.stringify(data.user));
       localStorage.setItem("accessToken", data.accessToken);
@@ -248,7 +397,7 @@ export const AuthProvider = ({ children }) => {
 
       return data.user;
     } catch (err) {
-      console.log("Login failed", err);
+      console.error("Login failed", err);
       toast.error(err.response?.data?.message || "Login failed");
       return null;
     }
@@ -270,7 +419,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Refresh token
+  // Optional: manual refresh token (usually interceptor handles it)
   const refreshToken = async () => {
     try {
       const res = await api.post("/auth/refresh"); // HttpOnly cookie
@@ -293,23 +442,9 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Wrapper for API calls with auto-refresh
-  const callApiWithRefresh = async (callback) => {
-    try {
-      return await callback();
-    } catch (err) {
-      if (err.response?.status === 401) {
-        await refreshToken(); // try refresh
-        return await callback(); // retry original request
-      } else {
-        throw err;
-      }
-    }
-  };
-
   return (
     <AuthContext.Provider
-      value={{ user, setUser, login, logout, refreshToken, callApiWithRefresh }}
+      value={{ user, setUser, login, logout, refreshToken }}
     >
       {children}
     </AuthContext.Provider>
