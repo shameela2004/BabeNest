@@ -640,7 +640,7 @@ export default function Checkout() {
       if (!emailRegex.test(formData.email.trim()))
         errs.email = "Enter a valid email.";
     }
-    if (!formData.address.trim() || formData.address.trim().length < 10)
+    if (!formData.address.trim() || formData.address.trim().length == 10)
       errs.address = "Address must be at least 10 characters.";
     if (!formData.phone.trim()) errs.phone = "Phone number required.";
     else if (!/^\d{10,}$/.test(formData.phone.trim()))

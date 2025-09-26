@@ -282,22 +282,214 @@
 
 // correct working home page before connecting with backend to fetch the top deals----------------------
 
+// import React, { useEffect, useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import Navbar from '../components/common/Navbar';
+// import Footer from '../components/common/Footer';
+// import { useAuth } from '../context/AuthProvider';
+// import api from '../api/axios';
+
+// export default function Home() {
+//   const [featured, setFeatured] = useState([]);
+//   const navigate = useNavigate();
+//   const {user}=useAuth()
+   
+//   const fetchProducts = async () => {
+//     try {
+//       const res = await api.get("/products", {
+//         params: {
+         
+//           Page: 1,
+//           PageSize: 10,
+//         },
+//       });
+
+//       const data = res.data.data.items;
+//       setFeatured(data);
+//     } catch (err) {
+//       console.error("Error fetching products:", err);
+//       setFeatured([]);
+//     }
+//   };
+// useEffect(() => {
+//     fetchProducts();
+//   }, []);
+//    useEffect(() => {
+//     if (user && user.role === 'admin') {
+//       navigate('/admin');
+//     }
+//   }, [user, navigate]);
+
+//   return (
+//     <>
+//       <Navbar />
+      
+//       {/* Hero Section */}
+//       <section className="relative h-[80vh] overflow-hidden">
+//         <img src="images/hero2.jpg" alt="hero" className="object-cover w-full h-full" />
+//         <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent flex flex-col justify-center items-center text-center p-4">
+//           <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-lg mb-4 animate-fade-in">
+//             Welcome to BabeNest
+//           </h1>
+//           <p className="text-xl text-white mb-6 animate-fade-in delay-200">
+//             Discover best seller essentials for your little one.
+//           </p>
+//           <button
+//             onClick={() => navigate('/products')}
+//             className="bg-white text-pink-600 font-semibold px-8 py-3 rounded-full shadow-lg hover:scale-105 transition transform animate-fade-in delay-300"
+//           >
+//             Shop Now
+//           </button>
+//         </div>
+//       </section>
+
+//       {/* Top Products */}
+//       <section className="max-w-7xl mx-auto py-12 px-4">
+//         <h2 className="text-3xl font-bold text-pink-700 mb-6 text-center">Top Deals</h2>
+//         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+//           {featured.map(prod => (
+//             <div
+//               key={prod.id}
+//               className="bg-white rounded-xl shadow hover:shadow-lg transform hover:-translate-y-1 transition cursor-pointer"
+//               onClick={() => navigate(`/products/${prod.id}`)}
+//             >
+//               <div className="relative overflow-hidden h-48 rounded-t-xl">
+//                 <img
+//                   src={prod.image}
+//                   alt={prod.name}
+//                   className="object-center object-cover w-full h-full hover:scale-110 transition duration-500"
+//                 />
+//               </div>
+//               <div className="p-4 text-center">
+//                 <h3 className="font-semibold text-lg truncate">{prod.name}</h3>
+//                 <p className="mt-2 text-pink-600 font-bold">₹{prod.price}</p>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </section>
+
+//    {/* Feature Highlights */}
+// <section className="bg-gradient-to-br from-pink-50 to-yellow-50 py-20 px-6">
+//   <div className="max-w-6xl mx-auto text-center">
+//     <h2 className="text-4xl font-extrabold text-pink-700 mb-12">Why Choose BabeNest?</h2>
+//     <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      
+//       {/* Card 1 */}
+//       <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-pink-200 transition-all transform hover:-translate-y-2">
+//         <img src="https://cdn-icons-png.freepik.com/512/11702/11702065.png" alt="Safety" className="w-16 mx-auto mb-4" />
+//         <h3 className="text-xl font-semibold text-pink-600 mb-2">Baby-Safe Products</h3>
+//         <p className="text-gray-600">All our items are hypoallergenic, toxin-free and certified for delicate skin.</p>
+//       </div>
+
+//       {/* Card 2 */}
+//       <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-yellow-200 transition-all transform hover:-translate-y-2">
+//         <img src="https://cdn.pixabay.com/photo/2025/06/23/15/12/ai-generated-9676110_640.png" alt="Fast Delivery" className="w-16 mx-auto mb-4" />
+//         <h3 className="text-xl font-semibold text-yellow-600 mb-2">Fast & Reliable Delivery</h3>
+//         <p className="text-gray-600">Get your baby’s favorites at your doorstep quickly and safely.</p>
+//       </div>
+
+//       {/* Card 3 */}
+//       <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-green-200 transition-all transform hover:-translate-y-2">
+//         <img src="https://cdn-icons-png.flaticon.com/512/10004/10004511.png" alt="Eco Friendly" className="w-16 mx-auto mb-4" />
+//         <h3 className="text-xl font-semibold text-green-600 mb-2">Eco-Friendly</h3>
+//         <p className="text-gray-600">We use sustainable materials and packaging for a better future.</p>
+//       </div>
+
+//       {/* Card 4 */}
+//       <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-blue-200 transition-all transform hover:-translate-y-2">
+//         <img src="https://png.pngtree.com/png-clipart/20250107/original/pngtree-vector-cartoon-customer-service-png-free-material-png-image_5472501.png" alt="Support" className="w-16 mx-auto mb-4" />
+//         <h3 className="text-xl font-semibold text-blue-600 mb-2">24/7 Customer Support</h3>
+//         <p className="text-gray-600">Need help? Our friendly team is here for you around the clock.</p>
+//       </div>
+
+//       {/* Card 5 */}
+//       <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-purple-200 transition-all transform hover:-translate-y-2">
+//         <img src="https://cdn-icons-png.flaticon.com/512/5526/5526322.png" alt="Quality Assured" className="w-16 mx-auto mb-4" />
+//         <h3 className="text-xl font-semibold text-purple-600 mb-2">Top Quality Assurance</h3>
+//         <p className="text-gray-600">Each item is handpicked and quality-checked by our team.</p>
+//       </div>
+
+//       {/* Card 6 */}
+//       <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-red-200 transition-all transform hover:-translate-y-2">
+//         <img src="https://cdn-icons-png.flaticon.com/512/6021/6021967.png" alt="Gifting" className="w-16 mx-auto mb-4" />
+//         <h3 className="text-xl font-semibold text-red-500 mb-2">Perfect for Gifting</h3>
+//         <p className="text-gray-600">Thoughtful packaging and adorable picks, ideal for baby showers.</p>
+//       </div>
+//     </div>
+//   </div>
+// </section>
+      
+
+
+//       {/* Newsletter Signup */}
+// <section className="bg-gradient-to-r from-pink-50 via-yellow-50 to-pink-50 py-16 px-4">
+//   <div className="max-w-4xl mx-auto text-center">
+//     <h2 className="text-3xl font-bold text-pink-600 mb-4">Stay Updated!</h2>
+//     <p className="text-gray-600 mb-6">
+//       Subscribe to our newsletter for exclusive offers, baby care tips, and product updates.
+//     </p>
+
+//     <form className="flex flex-col sm:flex-row items-center justify-center gap-4">
+//       <input
+//         type="email"
+//         placeholder="Enter your email"
+//         className="w-full sm:w-2/3 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-300"
+//       />
+//       <button
+//         type="submit"
+//         className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg shadow-md transition"
+//       >
+//         Subscribe
+//       </button>
+//     </form>
+
+//     <p className="text-sm text-gray-400 mt-4">No spam. Unsubscribe anytime.</p>
+//   </div>
+// </section>
+
+
+//       <Footer />
+//     </>
+//   );
+// }
+
+
+
+
+
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
-import axios from 'axios';
 import { useAuth } from '../context/AuthProvider';
+import api from '../api/axios';
 
 export default function Home() {
   const [featured, setFeatured] = useState([]);
   const navigate = useNavigate();
   const {user}=useAuth()
    
-  useEffect(() => {
-    axios.get('http://localhost:3001/products?_sort=id&_order=desc&_limit=10')
-      .then(res => setFeatured(res.data))
-      .catch(err => console.log(err));
+  const fetchProducts = async () => {
+    try {
+      const res = await api.get("/products", {
+        params: {
+         
+          Page: 1,
+          PageSize: 10,
+        },
+      });
+
+      const data = res.data.data.items;
+      setFeatured(data);
+    } catch (err) {
+      console.error("Error fetching products:", err);
+      setFeatured([]);
+    }
+  };
+useEffect(() => {
+    fetchProducts();
   }, []);
    useEffect(() => {
     if (user && user.role === 'admin') {
@@ -438,106 +630,3 @@ export default function Home() {
     </>
   );
 }
-
-
-
-
-
-// testing one 
-
-
-// import React, { useEffect, useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import Navbar from '../components/common/Navbar';
-// import Footer from '../components/common/Footer';
-// import api from '../api/axios'; // use your axios instance with auth
-// import { useAuth } from '../context/AuthProvider';
-
-// export default function Home() {
-//   const [featured, setFeatured] = useState([]);
-//   const navigate = useNavigate();
-//   const { user } = useAuth();
-   
-//   useEffect(() => {
-//     const fetchFeatured = async () => {
-//       try {
-//         const res = await api.get('/Product', {
-//           params: {
-//             page: 1,
-//             pageSize: 10,
-//             sortBy: 'id',
-//             order: 'desc'
-//           }
-//         });
-
-//         // Your backend sends items inside data.data.items
-//         setFeatured(res.data.data.items || []);
-//       } catch (err) {
-//         console.error('Failed to fetch featured products:', err);
-//       }
-//     };
-
-//     fetchFeatured();
-//   }, []);
-
-//   useEffect(() => {
-//     if (user && user.role === 'admin') {
-//       navigate('/admin');
-//     }
-//   }, [user, navigate]);
-
-//   return (
-//     <>
-//       <Navbar />
-      
-//       {/* Hero Section */}
-//       <section className="relative h-[80vh] overflow-hidden">
-//         <img src="images/hero2.jpg" alt="hero" className="object-cover w-full h-full" />
-//         <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent flex flex-col justify-center items-center text-center p-4">
-//           <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-lg mb-4 animate-fade-in">
-//             Welcome to BabeNest
-//           </h1>
-//           <p className="text-xl text-white mb-6 animate-fade-in delay-200">
-//             Discover best seller essentials for your little one.
-//           </p>
-//           <button
-//             onClick={() => navigate('/products')}
-//             className="bg-white text-pink-600 font-semibold px-8 py-3 rounded-full shadow-lg hover:scale-105 transition transform animate-fade-in delay-300"
-//           >
-//             Shop Now
-//           </button>
-//         </div>
-//       </section>
-
-//       {/* Top Products */}
-//       <section className="max-w-7xl mx-auto py-12 px-4">
-//         <h2 className="text-3xl font-bold text-pink-700 mb-6 text-center">Top Deals</h2>
-//         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-//           {featured.map(prod => (
-//             <div
-//               key={prod.id}
-//               className="bg-white rounded-xl shadow hover:shadow-lg transform hover:-translate-y-1 transition cursor-pointer"
-//               onClick={() => navigate(`/products/${prod.id}`)}
-//             >
-//               <div className="relative overflow-hidden h-48 rounded-t-xl">
-//                 <img
-//                   src={prod.image}
-//                   alt={prod.name}
-//                   className="object-center object-cover w-full h-full hover:scale-110 transition duration-500"
-//                 />
-//               </div>
-//               <div className="p-4 text-center">
-//                 <h3 className="font-semibold text-lg truncate">{prod.name}</h3>
-//                 <p className="mt-2 text-pink-600 font-bold">₹{prod.price}</p>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </section>
-
-//       {/* Rest of your homepage content */}
-//       {/* Feature highlights, newsletter, footer, etc. */}
-//       <Footer />
-//     </>
-//   );
-// }

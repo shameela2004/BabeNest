@@ -630,7 +630,7 @@ function ManageOrders() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const ordersPerPage = 5;
+  const ordersPerPage = 10;
 
   // Color mappings
   const orderStatusColors = {
@@ -647,26 +647,29 @@ function ManageOrders() {
   };
 
   // Fetch orders from backend
-  const fetchOrders = async (page = 1) => {
-    try {
-      const params = {
-        page,
-        pageSize: ordersPerPage,
-        statusId: statusFilter || undefined,
-        searchTerm: searchTerm || undefined,
-        startDate: dateRange.from || undefined,
-        endDate: dateRange.to || undefined,
-      };
+ const fetchOrders = async (page = 1) => {
+  try {
+    const params = {
+      page,
+      pageSize: ordersPerPage,
+      statusId: statusFilter || undefined,
+      searchTerm: searchTerm || undefined,
+      startDate: dateRange.from || undefined,
+      endDate: dateRange.to || undefined,
+    };
 
-      const res = await api.get("/AdminOrders/filter", { params });
-      const data = res.data.data;
-      setOrders(data);
-      setTotalPages(Math.ceil(data.length / ordersPerPage));
-    } catch (err) {
-      console.error("Failed to fetch orders:", err);
-      toast.error("Failed to fetch orders.");
-    }
-  };
+    const res = await api.get("/AdminOrders/filter", { params });
+    const data = res.data.data;
+
+    setOrders(data.items); // ✅ Items only
+    setTotalPages(Math.ceil(data.totalCount / ordersPerPage)); // ✅ Correct pagination
+    setCurrentPage(data.page);
+  } catch (err) {
+    console.error("Failed to fetch orders:", err);
+    toast.error("Failed to fetch orders.");
+  }
+};
+
 
   useEffect(() => {
     fetchOrders(currentPage);

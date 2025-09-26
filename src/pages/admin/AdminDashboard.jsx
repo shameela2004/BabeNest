@@ -139,34 +139,12 @@
 
 
 import React, { useEffect, useState } from "react";
-import {
-  FaUsers,
-  FaBoxOpen,
-  FaShoppingCart,
-  FaBan,
-  FaTruck,
-  FaCheckCircle,
-} from "react-icons/fa";
+import {FaUsers,FaBoxOpen, FaShoppingCart,FaBan,FaTruck,FaCheckCircle,} from "react-icons/fa";
 import { Doughnut, Bar } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  ArcElement,
-  Tooltip,
-  Legend,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-} from "chart.js";
+import {Chart as ChartJS,ArcElement,Tooltip,Legend,CategoryScale,LinearScale,BarElement,} from "chart.js";
 import api from "../../api/axios";
 
-ChartJS.register(
-  ArcElement,
-  Tooltip,
-  Legend,
-  CategoryScale,
-  LinearScale,
-  BarElement
-);
+ChartJS.register( ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
 
 const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
@@ -177,37 +155,62 @@ const AdminDashboard = () => {
     fetchData();
   }, []);
 
-  const fetchData = async () => {
-    try {
-      // ✅ Users
-      const userRes = await api.get("/AdminUser?page=1&pageSize=100");
-      const allUsers = userRes.data.data.data; // match API response
+//   const fetchData = async () => {
+//     try {
+//       // ✅ Users
+//       const userRes = await api.get("/AdminUser?page=1&pageSize=100");
+//       const allUsers = userRes.data.data.data; // match API response
 
-      // ✅ Products
-      const productRes = await api.get("/products?page=1&pageSize=100");
-      const allProducts = productRes.data.data.items;
+//       // ✅ Products
+//       const productRes = await api.get("/products?page=1&pageSize=100");
+//       const allProducts = productRes.data.data.items;
 
-      // ✅ Orders
-const orderRes = await api.get("/AdminOrders/filter?page=1&pageSize=100");
-const allOrders = orderRes.data.data || []; // ensure it's an array
+//       // ✅ Orders
+// const orderRes = await api.get("/AdminOrders/filter?page=1&pageSize=100");
+// const allOrders = orderRes.data.data || []; // ensure it's an array
 
 
 
-      setUsers(allUsers);
-      setProducts(allProducts);
-      setOrders(allOrders);
-    } catch (err) {
-      console.error("Error fetching dashboard data:", err);
-    }
-  };
+//       setUsers(allUsers);
+//       setProducts(allProducts);
+//       setOrders(allOrders);
+//     } catch (err) {
+//       console.error("Error fetching dashboard data:", err);
+//     }
+//   };
 
-  // ✅ Stats
+
+
+const fetchData = async () => {
+  try {
+    // Users
+ const userRes = await api.get("/AdminUser?page=1&pageSize=100");
+      const allUsers = userRes.data.data.data; 
+
+    // Products
+    const productRes = await api.get("/products?page=1&pageSize=100");
+    const allProducts = productRes.data.data.items || [];
+
+    // Orders
+    const orderRes = await api.get("/AdminOrders/filter?page=1&pageSize=100");
+    const allOrders = orderRes.data.data.items || []; 
+
+    setUsers(allUsers);
+    setProducts(allProducts);
+    setOrders(allOrders);
+  } catch (err) {
+    console.error("Error fetching dashboard data:", err);
+  }
+};
+
+
+  // user counts 
   const userCount = users.filter((u) => u.role?.toLowerCase() !== "admin").length;
   const blockedCount = users.filter(
     (u) => u.role?.toLowerCase() !== "admin" && u.blocked
   ).length;
 
-// ✅ Order status counts
+//  Order status counts
 const statusCounts = {
   pending: orders.filter((o) => o.orderStatus?.toLowerCase() === "pending").length,
   shipped: orders.filter((o) => o.orderStatus?.toLowerCase() === "shipped").length,
@@ -215,12 +218,12 @@ const statusCounts = {
   cancelled: orders.filter((o) => o.orderStatus?.toLowerCase() === "cancelled").length,
 };
 
-// ✅ Total revenue (only delivered orders count as actual revenue)
+//  Total revenue - only paid orders are counted 
 const totalRevenue = orders
   .filter((o) => o.paymentStatus?.toLowerCase() === "paid")
   .reduce((sum, o) => sum + (Number(o.totalAmount) || 0), 0);
 
-// ✅ Monthly revenue (delivered only)
+// Monthly revenue 
 const monthlyRevenue = Array(12).fill(0);
 orders.forEach((o) => {
   if (o.paymentStatus?.toLowerCase() === "paid") {

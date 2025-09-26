@@ -245,6 +245,8 @@ function ManageProducts() {
   const itemsPerPage = 8;
   const [priceRange, setPriceRange] = useState({ min: 0, max: 10000 });
   const [selectedRating, setSelectedRating] = useState(0);
+  const [totalCount, setTotalCount] = useState(0);
+
 
   const navigate = useNavigate();
 
@@ -267,25 +269,29 @@ function ManageProducts() {
     fetchProducts();
   }, [currentPage, searchTerm, categoryFilter, priceRange, selectedRating]);
 
-  const fetchProducts = async () => {
-    try {
-      const res = await api.get("/AdminProducts", {
-        params: {
-          Page: currentPage,
-          PageSize: itemsPerPage,
-          SearchTerm: searchTerm || undefined,
-          CategoryId: categoryFilter || undefined,
-          MinPrice: priceRange.min,
-          MaxPrice: priceRange.max,
-          Rating: selectedRating > 0 ? selectedRating : undefined,
-        },
-      });
-      setProducts(res.data.data.items);
-    } catch (err) {
-      console.error("Error fetching products:", err);
-      Swal.fire("Error", "Failed to fetch products.", "error");
-    }
-  };
+const fetchProducts = async () => {
+  try {
+    const res = await api.get("/AdminProducts", {
+      params: {
+        Page: currentPage,
+        PageSize: itemsPerPage,
+        SearchTerm: searchTerm || undefined,
+        CategoryId: categoryFilter || undefined,
+        MinPrice: priceRange.min,
+        MaxPrice: priceRange.max,
+        Rating: selectedRating > 0 ? selectedRating : undefined,
+      },
+    });
+
+    const data = res.data.data;
+    setProducts(data.items);
+    setTotalCount(data.totalCount);
+  } catch (err) {
+    console.error("Error fetching products:", err);
+    Swal.fire("Error", "Failed to fetch products.", "error");
+  }
+};
+
 
   const handleDelete = (product) => {
     Swal.fire({
@@ -309,10 +315,7 @@ function ManageProducts() {
     });
   };
 
-  const paginatedProducts = products.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
+
 
   return (
     <div className="p-6">
@@ -408,7 +411,7 @@ function ManageProducts() {
             </tr>
           </thead>
           <tbody>
-            {paginatedProducts.map((product) => (
+            {products.map((product) => (
               <tr
                 key={product.id}
                 className="border-t hover:bg-pink-50 cursor-pointer"
@@ -486,6 +489,20 @@ function ManageProducts() {
           </div>
         </div>
       )}
+      <div className="flex justify-center items-center mt-4 gap-2">
+  {Array.from({ length: Math.ceil(totalCount / itemsPerPage) }, (_, i) => i + 1).map((page) => (
+    <button
+      key={page}
+      onClick={() => setCurrentPage(page)}
+      className={`px-3 py-1 rounded ${
+        currentPage === page ? "bg-pink-600 text-white" : "bg-gray-200 text-gray-700"
+      }`}
+    >
+      {page}
+    </button>
+  ))}
+</div>
+
     </div>
   );
 }

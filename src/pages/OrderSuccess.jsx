@@ -145,7 +145,7 @@ export default function OrderSuccess() {
 
         <div className="mt-6 flex gap-4">
           <Link to="/" className="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded">Continue Shopping</Link>
-          <Link to="/orders" className="bg-white border px-4 py-2 rounded">View Orders</Link>
+          <Link to="/myorders" className="bg-white border px-4 py-2 rounded">View Orders</Link>
         </div>
       </div>
     </div>

@@ -24,13 +24,11 @@
 
 
 
-// api/axios.js
 import axios from "axios";
 
-// Create axios instance
 const api = axios.create({
   baseURL: "https://localhost:7213/api",
-  withCredentials: true, // ✅ send cookies automatically
+  withCredentials: true, // send cookies automatically
 });
 
 // Request interceptor: attach access token
