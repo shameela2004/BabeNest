@@ -644,7 +644,7 @@ export default function Checkout() {
       errs.address = "Address must be at least 10 characters.";
     if (!formData.phone.trim()) errs.phone = "Phone number required.";
     else if (!/^\d{10,}$/.test(formData.phone.trim()))
-      errs.phone = "Phone must be at least 10 digits.";
+      errs.phone = "Phone number must be 10 digits.";
 
     setErrors(errs);
     return Object.keys(errs).length === 0;
